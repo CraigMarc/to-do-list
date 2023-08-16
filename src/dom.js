@@ -1,9 +1,4 @@
-import module1 from './module1';
-import './styles.css';
-import todoFactory from './factoryfunct';
-
-
-module1()
+/*get data from form*/
 
 document.querySelector('form').addEventListener('submit', (e) => {
     e.preventDefault()
@@ -24,6 +19,3 @@ document.querySelector('form').addEventListener('submit', (e) => {
     btn.style.display = 'block';*/
   
   });
-
-
-
