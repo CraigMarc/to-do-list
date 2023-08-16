@@ -18,16 +18,18 @@ const todoFactory = (description, dueDate, priority) => {
    return window[array]
   }
 
-  export default todoFactory;
+  export {
+    createProject,
+    addToProject
+  };
 
-
-
+/*
   createProject('project1')
   console.log(addToProject('project1', 'project1', '11/02', 'high'))
 
   createProject('project2')
   console.log(addToProject('project2', 'project2', '11/02', 'high'))
-  console.log(addToProject('project2', 'project2a', '11/02', 'high'))
+  console.log(addToProject('project2', 'project2a', '11/02', 'high'))*/
   /*
  
 let newProject = 'project1'
