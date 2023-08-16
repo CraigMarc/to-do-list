@@ -7,6 +7,37 @@
 </head>
 <body>
     <script src="main.js"></script>
+
+    <form action="" id="form">
+        <fieldset>
+        <div class="input">
+        <label for="description">Description:</label>
+        <input name="description" type="text" id="description" required>
+        </div>
+        <div class="input">
+        <label for="date">Date:</label>
+        <input name="date" type="date" id="date" required>
+        </div>
+      
+       
+        <div class="input">
+          <label for="priority">Priority:</label>
+          <select name="priority" id="priority"> 
+            <option value="No">Low</option>
+            <option value="Yes">Medium</option> 
+            <option value="Yes">High</option>
+            
+        </select>
+          </div>
+        
+        </fieldset>
+    
+        
+        <div class="submit">
+        <button type="submit">Add Book</button>
+        
+        </div>
+       </form>
     
     <div id="container"></div>
 </body>
