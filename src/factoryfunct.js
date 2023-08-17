@@ -41,10 +41,18 @@ function addToProject(projectName, description, dueDate, priority) {
   return window[array]
 }
 
+function changeProject(arrayNumber) {
+return (projectListArray[arrayNumber]) + "Array"
+
+}
+
+
+
 export {
   createProject,
   addToProject,
-  projectNameArray
+  projectNameArray,
+  changeProject
 };
 
 /*

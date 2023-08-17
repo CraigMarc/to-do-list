@@ -1,4 +1,4 @@
-import {createProject, addToProject, projectNameArray} from './factoryfunct';
+import {createProject, addToProject, projectNameArray, changeProject} from './factoryfunct';
 //create project for main folder
 createProject('inbox')
 
@@ -157,7 +157,7 @@ function projectForm() {
   function removeProjectTabs () {
     const remove = document.getElementById("projecttab");
     remove.remove()
-
+    return
   }
   
 
@@ -173,8 +173,11 @@ select.forEach((button) => {
 })
 }
 
+
+
 function selectProject(e) {
-console.log(e.target.value)
+
+changeProject(e.target.value) 
 
 }
 
@@ -184,7 +187,8 @@ console.log(e.target.value)
     form,
     projectForm,
     addProjectTabs,
-    removeProjectTabs
+    removeProjectTabs,
+    selectProject
   };
 
 
