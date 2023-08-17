@@ -1,27 +1,45 @@
-const todoFactory = (description, dueDate, priority) => {
-    
-    return { description, dueDate, priority };
+import {addProjectTabs} from './dom';
 
-  };
+
+let projectListArray = []
+
+const todoFactory = (description, dueDate, priority) => {
+
+  return { description, dueDate, priority };
+
+};
 /*create new array for new project*/
-  function createProject(projectName) {
-    let newProject = projectName + 'Array'
-    
-    return window[newProject] = []
-  }
+function createProject(projectName) {
+  projectNameArray(projectName)
+
+  let newProject = projectName + 'Array'
+
+  return window[newProject] = []
+}
+
+// project name array
+
+function projectNameArray(projectName) {
+  projectListArray.push(projectName)
+  console.log(projectListArray)
+  addProjectTabs(projectListArray)
+
+  return projectListArray
+}
 
 /*add to project array*/
-  function addToProject(projectName, description, dueDate, priority) {
-   let array = projectName+'Array'
+function addToProject(projectName, description, dueDate, priority) {
+  let array = projectName + 'Array'
 
-   window[array].push(todoFactory(description, dueDate, priority))
-   return window[array]
-  }
+  window[array].push(todoFactory(description, dueDate, priority))
+  return window[array]
+}
 
-  export {
-    createProject,
-    addToProject
-  };
+export {
+  createProject,
+  addToProject,
+  projectNameArray
+};
 
 /*
   createProject('project1')
@@ -30,7 +48,7 @@ const todoFactory = (description, dueDate, priority) => {
   createProject('project2')
   console.log(addToProject('project2', 'project2', '11/02', 'high'))
   console.log(addToProject('project2', 'project2a', '11/02', 'high'))*/
-  /*
+/*
  
 let newProject = 'project1'
 
@@ -47,4 +65,3 @@ console.log(project2)*/
 
 
 
- 

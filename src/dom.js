@@ -1,4 +1,4 @@
-import {createProject, addToProject} from './factoryfunct';
+import {createProject, addToProject, projectNameArray} from './factoryfunct';
 
 createProject('inbox')
 
@@ -112,10 +112,12 @@ function projectForm() {
   document.getElementById('projform').addEventListener('submit', (e) => {
       e.preventDefault()
       const data = Object.fromEntries(new FormData(e.target).entries());
-      let projectForm = project.description
+      let projectForm = data.project
       
+      createProject(projectForm)
+     
       
-      console.log(data)
+     
       /*
       if (inboxArray.length > 0) {
         clearTable(inboxArray)
@@ -129,11 +131,25 @@ function projectForm() {
     
     });
   }
+
+  function addProjectTabs (projectListArray) {
+    for (let i = 0; i < projectListArray.length; i++) {
+    const div1 = document.createElement('div');
+    div1.classList.add('projecttab');
+    div1.textContent = projectListArray[i]
+    document.body.appendChild(div1);
+    }
+
+    return 
+
+
+  }
   
 
   export {
     form,
-    projectForm
+    projectForm,
+    addProjectTabs
   };
 
 
