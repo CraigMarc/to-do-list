@@ -1,10 +1,11 @@
-import {createProject, addToProject, projectNameArray, changeProject} from './factoryfunct';
-//create project for main folder
-createProject('inbox')
+import {addToProject, projectNameArray, currentProject} from './factoryfunct';
+
 
 // display todos
 
 function displayToDos(todoArray) {
+  
+
   for (let i = 0; i < todoArray.length; i++) {
     let table = document.getElementById("todoTable");
     let row = table.insertRow(1);
@@ -37,7 +38,7 @@ function displayToDos(todoArray) {
       button.addEventListener('click', (e) => {
         let value = button.value
 
-        deleteToDo(value)
+        deleteToDo(value, todoArray)
         e.stopImmediatePropagation();
 
 
@@ -53,6 +54,8 @@ function displayToDos(todoArray) {
 
  function deleteTable(todoArray) {
 
+  
+
   for (let i = 1; i < todoArray.length + 2; i++) {
     document.getElementById("todoTable").deleteRow(1);
 
@@ -61,6 +64,7 @@ function displayToDos(todoArray) {
 }
 // clear table when adding new book
 function clearTable(todoArray) {
+  
 
   for (let i = 1; i < todoArray.length + 1; i++) {
     document.getElementById("todoTable").deleteRow(1);
@@ -72,19 +76,21 @@ function clearTable(todoArray) {
 
 
 //delete todo
-function deleteToDo(value) {
+function deleteToDo(value, todoArray ) {
+  
+
+  todoArray.splice(value, 1)
 
 
-  inboxArray.splice(value, 1)
-
-
-  deleteTable(inboxArray)
-  displayToDos(inboxArray)
+  deleteTable(todoArray)
+  displayToDos(todoArray)
 }
 
 // will have to take out inboxarray variables ********
 
 function form() {
+  let todoArray = addToProject()
+
 document.querySelector('form').addEventListener('submit', (e) => {
     e.preventDefault()
     const data = Object.fromEntries(new FormData(e.target).entries());
@@ -94,14 +100,14 @@ document.querySelector('form').addEventListener('submit', (e) => {
     
     
     
-    if (inboxArray.length > 0) {
-      clearTable(inboxArray)
+    if (todoArray.length > 0) {
+      clearTable(todoArray)
     }
 
     addToProject('inbox', descriptionForm, dateForm, priorityForm)
     
-    displayToDos(inboxArray)
-    console.log(inboxArray)
+    displayToDos(todoArray)
+    console.log(todoArray)
     
   
   });
@@ -114,7 +120,7 @@ function projectForm() {
       const data = Object.fromEntries(new FormData(e.target).entries());
       let projectForm = data.project
       
-      createProject(projectForm)
+      addToProject(projectForm)
      
      
      
@@ -177,7 +183,7 @@ select.forEach((button) => {
 
 function selectProject(e) {
 
-changeProject(e.target.value) 
+currentProject(e.target.value) 
 
 }
 

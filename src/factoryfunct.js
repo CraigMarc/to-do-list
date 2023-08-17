@@ -2,20 +2,34 @@ import {addProjectTabs, removeProjectTabs} from './dom';
 
 
 let projectListArray = []
+let projectArray = []
 
-const todoFactory = (description, dueDate, priority) => {
+const todoFactory = (project, description, dueDate, priority) => {
 
-  return { description, dueDate, priority };
+  return { project, description, dueDate, priority };
 
 };
-/*create new array for new project*/
-function createProject(projectName) {
-  projectNameArray(projectName)
 
-  let newProject = projectName + 'Array'
-
-  return window[newProject] = []
+/*add to project array*/
+function addToProject(projectName, description, dueDate, priority) {
+ 
+  if (description == undefined) {
+    return projectArray
+  }
+  
+projectArray.push(todoFactory(projectName, description, dueDate, priority))
+  
+  return projectArray
 }
+
+
+
+
+
+
+
+
+
 
 // project name array for new projects
 
@@ -33,15 +47,13 @@ function projectNameArray(projectName) {
   //return projectListArray
 }
 
-/*add to project array*/
-function addToProject(projectName, description, dueDate, priority) {
-  let array = projectName + 'Array'
 
-  window[array].push(todoFactory(description, dueDate, priority))
-  return window[array]
+
+function currentProject(arrayNumber) {
+if (projectListArray.length == 1) {
+  return projectListArray[0] + "Array"
 }
 
-function changeProject(arrayNumber) {
 return (projectListArray[arrayNumber]) + "Array"
 
 }
@@ -49,10 +61,10 @@ return (projectListArray[arrayNumber]) + "Array"
 
 
 export {
-  createProject,
+  
   addToProject,
   projectNameArray,
-  changeProject
+  currentProject
 };
 
 /*
