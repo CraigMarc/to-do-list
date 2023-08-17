@@ -147,7 +147,7 @@ function projectForm() {
     }
     ;
    
-
+    projectTabListener()
     return 
 
 
@@ -162,6 +162,7 @@ function projectForm() {
   
 
 //project tab event listener
+function projectTabListener (){
 const select = document.querySelectorAll('#projecttab');
 
 select.forEach((button) => {
@@ -170,6 +171,7 @@ select.forEach((button) => {
 
     
 })
+}
 
 function selectProject(e) {
 console.log(e.target.value)
