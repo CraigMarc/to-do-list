@@ -90,15 +90,15 @@ document.querySelector('form').addEventListener('submit', (e) => {
     const data = Object.fromEntries(new FormData(e.target).entries());
     let descriptionForm = data.description
     let dateForm = data.date
-    let priorityuForm = data.priority
+    let priorityForm = data.priority
     
-    console.log(data)
+    
     
     if (inboxArray.length > 0) {
       clearTable(inboxArray)
     }
 
-    addToProject('inbox', descriptionForm, dateForm, priorityuForm)
+    addToProject('inbox', descriptionForm, dateForm, priorityForm)
     
     displayToDos(inboxArray)
     console.log(inboxArray)
@@ -107,6 +107,35 @@ document.querySelector('form').addEventListener('submit', (e) => {
   });
 }
 
+//project form
+function projectForm() {
+  document.getElementById('projform').addEventListener('submit', (e) => {
+      e.preventDefault()
+      const data = Object.fromEntries(new FormData(e.target).entries());
+      let projectForm = project.description
+      
+      
+      console.log(data)
+      /*
+      if (inboxArray.length > 0) {
+        clearTable(inboxArray)
+      }
+  
+      addToProject('inbox', descriptionForm, dateForm, priorityuForm)
+      
+      displayToDos(inboxArray)
+      console.log(inboxArray)*/
+      
+    
+    });
+  }
+  
+
+  export {
+    form,
+    projectForm
+  };
 
 
-export default form;
+
+
