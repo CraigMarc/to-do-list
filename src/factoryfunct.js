@@ -1,4 +1,4 @@
-import {addProjectTabs} from './dom';
+import {addProjectTabs, removeProjectTabs} from './dom';
 
 
 let projectListArray = []
@@ -22,6 +22,9 @@ function createProject(projectName) {
 function projectNameArray(projectName) {
   projectListArray.push(projectName)
   console.log(projectListArray)
+  if (projectListArray.length > 1){
+  removeProjectTabs()
+}
   addProjectTabs(projectListArray)
 
   return projectListArray

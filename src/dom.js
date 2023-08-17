@@ -1,5 +1,5 @@
 import {createProject, addToProject, projectNameArray} from './factoryfunct';
-
+//create project for main folder
 createProject('inbox')
 
 // display todos
@@ -133,15 +133,27 @@ function projectForm() {
   }
 
   function addProjectTabs (projectListArray) {
+   
+   
+
     for (let i = 0; i < projectListArray.length; i++) {
     const div1 = document.createElement('div');
-    div1.classList.add('projecttab');
+    div1.id = 'projecttab';
     div1.textContent = projectListArray[i]
     document.body.appendChild(div1);
     }
 
+   
+
     return 
 
+
+  }
+
+
+  function removeProjectTabs () {
+    const remove = document.getElementById("projecttab");
+    remove.remove()
 
   }
   
@@ -149,7 +161,8 @@ function projectForm() {
   export {
     form,
     projectForm,
-    addProjectTabs
+    addProjectTabs,
+    removeProjectTabs
   };
 
 
