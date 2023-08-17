@@ -116,7 +116,7 @@ function projectForm() {
       
       createProject(projectForm)
      
-      
+     
      
       /*
       if (inboxArray.length > 0) {
@@ -137,12 +137,15 @@ function projectForm() {
    
 
     for (let i = 0; i < projectListArray.length; i++) {
+    
     const div1 = document.createElement('div');
     div1.id = 'projecttab';
+    div1.value = i
     div1.textContent = projectListArray[i]
-    document.body.appendChild(div1);
+    document.body.appendChild(div1)
+    
     }
-
+    ;
    
 
     return 
@@ -158,13 +161,28 @@ function projectForm() {
   }
   
 
+//project tab event listener
+const select = document.querySelectorAll('#projecttab');
+
+select.forEach((button) => {
+
+    button.addEventListener('click', selectProject)
+
+    
+})
+
+function selectProject(e) {
+console.log(e.target.value)
+
+}
+
+
+
   export {
     form,
     projectForm,
     addProjectTabs,
     removeProjectTabs
   };
-
-
 
 

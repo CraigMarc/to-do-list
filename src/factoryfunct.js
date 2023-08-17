@@ -17,17 +17,20 @@ function createProject(projectName) {
   return window[newProject] = []
 }
 
-// project name array
+// project name array for new projects
+
 
 function projectNameArray(projectName) {
   projectListArray.push(projectName)
+
   console.log(projectListArray)
   if (projectListArray.length > 1){
+    
   removeProjectTabs()
 }
   addProjectTabs(projectListArray)
 
-  return projectListArray
+  //return projectListArray
 }
 
 /*add to project array*/
