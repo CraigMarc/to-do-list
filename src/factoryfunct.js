@@ -34,16 +34,18 @@ function findProjects (projectFind) {
   let result = [];
   
   projectArray.forEach((project, index) => project.project === projectFind ? result.push(index) : null)
+  console.log(result)
     return result
   }
 
   //delete todo from array
 
   function deleteToDoFromProjectArray(project, value) {
-
+console.log(project)
     let projectArr = findProjects(project)
     console.log(projectArray)
-
+    console.log(value)
+    
     projectArray.splice(projectArr[value], 1)
     return projectArray
   }

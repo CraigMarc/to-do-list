@@ -96,7 +96,7 @@ function clearTable(todoArray) {
 function deleteToDo(value, todoArray) {
 
 
-deleteToDoFromProjectArray(returnProject, value)
+deleteToDoFromProjectArray(returnProject[0], value)
 
   clearTable(returnProjectArray(returnProject[0]))
   displayToDos(returnProjectArray(returnProject[0]))
