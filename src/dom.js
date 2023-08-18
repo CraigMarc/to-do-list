@@ -8,6 +8,11 @@ projectNow('inbox')
 
 function displayToDos(todoArray) {
 
+//change title
+  const title = document.querySelector('#title');
+  title.textContent = returnProject[0];
+  
+  
 
   for (let i = 0; i < todoArray.length; i++) {
     let table = document.getElementById("todoTable");
