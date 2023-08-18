@@ -1,4 +1,4 @@
-import { addToProject, projectNameArray, currentProject, returnProjectArray } from './factoryfunct';
+import { addToProject, projectNameArray, currentProject, returnProjectArray, deleteToDoFromProjectArray } from './factoryfunct';
 
 //set project var
 let returnProject = []
@@ -60,7 +60,7 @@ function displayToDos(todoArray) {
 }
 
 // delete table function when deleting to do **** may just use clear table now
-
+/*
 function deleteTable(todoArray) {
 
 
@@ -70,7 +70,9 @@ function deleteTable(todoArray) {
 
 
   }
-}
+}*/
+
+
 // clear table when adding new item
 function clearTable(todoArray) {
 
@@ -94,11 +96,10 @@ function clearTable(todoArray) {
 function deleteToDo(value, todoArray) {
 
 
-  todoArray.splice(value, 1)
+deleteToDoFromProjectArray(returnProject, value)
 
-
-  deleteTable(todoArray)
-  displayToDos(todoArray)
+  clearTable(returnProjectArray(returnProject[0]))
+  displayToDos(returnProjectArray(returnProject[0]))
 }
 
 // will have to take out inboxarray variables ********
@@ -125,8 +126,7 @@ let todoArray = addToProject()
 
     displayToDos(returnProjectArray(returnProject[0]))
    
-  console.log(returnProjectArray(returnProject[0]))
-  console.log('aa')
+  
 
   });
 }
@@ -201,6 +201,10 @@ function projectTabListener() {
 
 
 function selectProject(e) {
+
+  clearTable(returnProjectArray(returnProject[0]))
+  displayToDos(returnProjectArray(returnProject[0]))
+
 
   return currentProject(e.target.value)
 
