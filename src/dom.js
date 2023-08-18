@@ -1,5 +1,8 @@
-import { addToProject, projectNameArray, currentProject } from './factoryfunct';
+import { addToProject, projectNameArray, currentProject, returnProjectArray } from './factoryfunct';
 
+//set project var
+let returnProject = []
+projectNow('inbox')
 
 // display todos
 
@@ -91,20 +94,21 @@ function deleteToDo(value, todoArray) {
 function form() {
   let todoArray = addToProject()
 
+
   document.querySelector('form').addEventListener('submit', (e) => {
     e.preventDefault()
     const data = Object.fromEntries(new FormData(e.target).entries());
     let descriptionForm = data.description
     let dateForm = data.date
     let priorityForm = data.priority
-
+    let projectForm = projectNow()
 
 
     if (todoArray.length > 0) {
       clearTable(todoArray)
     }
 
-    addToProject('inbox', descriptionForm, dateForm, priorityForm)
+    addToProject(projectForm, descriptionForm, dateForm, priorityForm)
 
     displayToDos(todoArray)
     console.log(todoArray)
@@ -184,8 +188,16 @@ function projectTabListener() {
 
 function selectProject(e) {
 
-  currentProject(e.target.value)
+  return currentProject(e.target.value)
 
+}
+
+function projectNow(project){
+  if (project == undefined) {
+    return returnProject[0]
+  }
+  returnProject[0] = project
+  return returnProject
 }
 
 
@@ -195,7 +207,8 @@ export {
   projectForm,
   addProjectTabs,
   removeProjectTabs,
-  selectProject
+  selectProject,
+  projectNow
 };
 
 

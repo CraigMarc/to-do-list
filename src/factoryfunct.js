@@ -1,7 +1,7 @@
-import {addProjectTabs, removeProjectTabs} from './dom';
+import {addProjectTabs, removeProjectTabs, projectNow} from './dom';
 
 
-let projectListArray = []
+let projectListArray = ['inbox', ]
 let projectArray = []
 
 const todoFactory = (project, description, dueDate, priority) => {
@@ -22,6 +22,15 @@ projectArray.push(todoFactory(projectName, description, dueDate, priority))
   return projectArray
 }
 
+//filter array 
+function returnProjectArray (array, projectName) {
+
+
+  
+  return array.filter(function(x){return x.project == projectName}) 
+  
+}
+
 
 
 
@@ -37,7 +46,7 @@ projectArray.push(todoFactory(projectName, description, dueDate, priority))
 function projectNameArray(projectName) {
   projectListArray.push(projectName)
 
-  console.log(projectListArray)
+  
   if (projectListArray.length > 1){
     
   removeProjectTabs()
@@ -50,12 +59,13 @@ function projectNameArray(projectName) {
 
 
 function currentProject(arrayNumber) {
-  console.log(arrayNumber)
+  
 if (projectListArray.length == 1) {
-  return projectListArray[0] + "Array"
+  projectNow(projectListArray[0] )
+  return projectListArray[0] 
 }
-
-return (projectListArray[arrayNumber]) + "Array"
+projectNow(projectListArray[arrayNumber])
+return (projectListArray[arrayNumber]) 
 
 }
 
@@ -65,7 +75,8 @@ export {
   
   addToProject,
   projectNameArray,
-  currentProject
+  currentProject,
+  returnProjectArray
 };
 
 /*
