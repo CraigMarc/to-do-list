@@ -59,7 +59,7 @@ function displayToDos(todoArray) {
   }
 }
 
-// delete table function when deleting to do
+// delete table function when deleting to do **** may just use clear table now
 
 function deleteTable(todoArray) {
 
