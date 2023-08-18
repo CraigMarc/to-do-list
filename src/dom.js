@@ -17,6 +17,7 @@ function displayToDos(todoArray) {
   for (let i = 0; i < todoArray.length; i++) {
     let table = document.getElementById("todoTable");
     let row = table.insertRow(1);
+    row.id = 'row'
     let cell1 = row.insertCell(0);
     let cell2 = row.insertCell(1);
     let cell3 = row.insertCell(2);
@@ -70,15 +71,21 @@ function deleteTable(todoArray) {
 
   }
 }
-// clear table when adding new book
+// clear table when adding new item
 function clearTable(todoArray) {
 
+  const rowRem = document.querySelectorAll('#row');
 
+  rowRem.forEach(proj => {
+    proj.remove();
+  });
+
+/*
   for (let i = 1; i < todoArray.length + 1; i++) {
     document.getElementById("todoTable").deleteRow(1);
 
 
-  }
+  }*/
 }
 
 
@@ -99,6 +106,7 @@ function deleteToDo(value, todoArray) {
 function form() {
 let todoArray = addToProject()
 
+//let todoArray = returnProjectArray(returnProject[0])
 
   document.querySelector('form').addEventListener('submit', (e) => {
     e.preventDefault()
@@ -110,13 +118,13 @@ let todoArray = addToProject()
 
 
     if (todoArray.length > 0) {
-      clearTable(todoArray)
+      clearTable(returnProjectArray(returnProject[0]))
     }
-
+    //todoArray = returnProjectArray(returnProject[0])
     addToProject(projectForm, descriptionForm, dateForm, priorityForm)
 
-    displayToDos(todoArray)
-    console.log(todoArray)
+    displayToDos(returnProjectArray(returnProject[0]))
+   
   console.log(returnProjectArray(returnProject[0]))
   console.log('aa')
 
