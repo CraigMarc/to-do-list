@@ -125,8 +125,8 @@ function projectForm() {
       e.preventDefault()
       const data = Object.fromEntries(new FormData(e.target).entries());
       let projectForm = data.project
-      
-      addToProject(projectForm)
+      console.log(projectForm)
+      projectNameArray(projectForm)
      
      
      
