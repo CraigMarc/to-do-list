@@ -50,6 +50,7 @@ function projectNameArray(projectName) {
 
 
 function currentProject(arrayNumber) {
+  console.log(arrayNumber)
 if (projectListArray.length == 1) {
   return projectListArray[0] + "Array"
 }
