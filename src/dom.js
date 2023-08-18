@@ -1,10 +1,10 @@
-import {addToProject, projectNameArray, currentProject} from './factoryfunct';
+import { addToProject, projectNameArray, currentProject } from './factoryfunct';
 
 
 // display todos
 
 function displayToDos(todoArray) {
-  
+
 
   for (let i = 0; i < todoArray.length; i++) {
     let table = document.getElementById("todoTable");
@@ -12,15 +12,15 @@ function displayToDos(todoArray) {
     let cell1 = row.insertCell(0);
     let cell2 = row.insertCell(1);
     let cell3 = row.insertCell(2);
-    
+
     let cell4 = row.insertCell(3);
     cell4.setAttribute('id', 'cell4');
-    
+
 
     cell1.textContent = todoArray[i].description;
     cell2.textContent = todoArray[i].dueDate;
     cell3.textContent = todoArray[i].priority;
-    
+
 
     let deleteButton = document.createElement('button');
     deleteButton.setAttribute('type', 'button');
@@ -50,11 +50,11 @@ function displayToDos(todoArray) {
   }
 }
 
- // delete table function when deleting to do
+// delete table function when deleting to do
 
- function deleteTable(todoArray) {
+function deleteTable(todoArray) {
 
-  
+
 
   for (let i = 1; i < todoArray.length + 2; i++) {
     document.getElementById("todoTable").deleteRow(1);
@@ -64,7 +64,7 @@ function displayToDos(todoArray) {
 }
 // clear table when adding new book
 function clearTable(todoArray) {
-  
+
 
   for (let i = 1; i < todoArray.length + 1; i++) {
     document.getElementById("todoTable").deleteRow(1);
@@ -76,8 +76,8 @@ function clearTable(todoArray) {
 
 
 //delete todo
-function deleteToDo(value, todoArray ) {
-  
+function deleteToDo(value, todoArray) {
+
 
   todoArray.splice(value, 1)
 
@@ -91,25 +91,25 @@ function deleteToDo(value, todoArray ) {
 function form() {
   let todoArray = addToProject()
 
-document.querySelector('form').addEventListener('submit', (e) => {
+  document.querySelector('form').addEventListener('submit', (e) => {
     e.preventDefault()
     const data = Object.fromEntries(new FormData(e.target).entries());
     let descriptionForm = data.description
     let dateForm = data.date
     let priorityForm = data.priority
-    
-    
-    
+
+
+
     if (todoArray.length > 0) {
       clearTable(todoArray)
     }
 
     addToProject('inbox', descriptionForm, dateForm, priorityForm)
-    
+
     displayToDos(todoArray)
     console.log(todoArray)
-    
-  
+
+
   });
 }
 
@@ -122,85 +122,80 @@ document.querySelector('form').addEventListener('submit', (e) => {
 //project form
 function projectForm() {
   document.getElementById('projform').addEventListener('submit', (e) => {
-      e.preventDefault()
-      const data = Object.fromEntries(new FormData(e.target).entries());
-      let projectForm = data.project
-      console.log(projectForm)
-      projectNameArray(projectForm)
-     
-     
-     
-      /*
-      if (inboxArray.length > 0) {
-        clearTable(inboxArray)
-      }
-  
-      addToProject('inbox', descriptionForm, dateForm, priorityuForm)
-      
-      displayToDos(inboxArray)
-      console.log(inboxArray)*/
-      
-    
-    });
-  }
+    e.preventDefault()
+    const data = Object.fromEntries(new FormData(e.target).entries());
+    let projectForm = data.project
+    console.log(projectForm)
+    projectNameArray(projectForm)
 
-  function addProjectTabs (projectListArray) {
-   
-   
 
-    for (let i = 0; i < projectListArray.length; i++) {
-    
+
+  });
+}
+
+function addProjectTabs(projectListArray) {
+
+
+
+  for (let i = 0; i < projectListArray.length; i++) {
+
     const div1 = document.createElement('div');
     div1.id = 'projecttab';
     div1.value = i
     div1.textContent = projectListArray[i]
     document.body.appendChild(div1)
-    
-    }
-    ;
-   
-    projectTabListener()
-    return 
-
 
   }
+  ;
+
+  projectTabListener()
+  return
 
 
-  function removeProjectTabs () {
-    const remove = document.getElementById("projecttab");
-    remove.remove()
-    return
-  }
-  
+}
+
+
+function removeProjectTabs() {
+
+  const projectTab = document.querySelectorAll('#projecttab');
+
+  projectTab.forEach(proj => {
+    proj.remove();
+  });
+
+
+
+}
+
 
 //project tab event listener
-function projectTabListener (){
-const select = document.querySelectorAll('#projecttab');
+function projectTabListener() {
+  const select = document.querySelectorAll('#projecttab');
 
-select.forEach((button) => {
+  select.forEach((button) => {
 
     button.addEventListener('click', selectProject)
 
-    
-})
+
+  })
 }
 
 
 
 function selectProject(e) {
 
-currentProject(e.target.value) 
+  currentProject(e.target.value)
 
 }
 
 
 
-  export {
-    form,
-    projectForm,
-    addProjectTabs,
-    removeProjectTabs,
-    selectProject
-  };
+export {
+  form,
+  projectForm,
+  addProjectTabs,
+  removeProjectTabs,
+  selectProject
+};
 
 
