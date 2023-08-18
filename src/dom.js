@@ -113,6 +113,12 @@ document.querySelector('form').addEventListener('submit', (e) => {
   });
 }
 
+
+
+
+
+
+
 //project form
 function projectForm() {
   document.getElementById('projform').addEventListener('submit', (e) => {
