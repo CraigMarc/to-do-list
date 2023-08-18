@@ -29,8 +29,13 @@ function returnProjectArray (projectName) {
   
 }
 
-
-
+// find the indexes of all projects in the projectArray
+function findProjects (projectFind) {
+  let result = [];
+  
+  array.forEach((project, index) => project.project === projectFind ? result.push(index) : null)
+    return result
+  }
 
 
 
