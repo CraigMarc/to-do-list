@@ -97,7 +97,7 @@ function deleteToDo(value, todoArray) {
 // will have to take out inboxarray variables ********
 
 function form() {
-  let todoArray = addToProject()
+let todoArray = addToProject()
 
 
   document.querySelector('form').addEventListener('submit', (e) => {
@@ -117,7 +117,8 @@ function form() {
 
     displayToDos(todoArray)
     console.log(todoArray)
-
+  console.log(returnProjectArray(returnProject[0]))
+  console.log('aa')
 
   });
 }

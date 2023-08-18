@@ -23,11 +23,9 @@ projectArray.push(todoFactory(projectName, description, dueDate, priority))
 }
 
 //filter array 
-function returnProjectArray (array, projectName) {
+function returnProjectArray (projectName) {
 
-
-  
-  return array.filter(function(x){return x.project == projectName}) 
+  return projectArray.filter(function(x){return x.project == projectName}) 
   
 }
 
