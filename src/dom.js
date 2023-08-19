@@ -4,7 +4,8 @@ import { addToProject,
    returnProjectArray, 
    deleteToDoFromProjectArray,
    deleteProjectFromProjectArray,
-   deleteProjectFromProjectListArray
+   deleteProjectFromProjectListArray,
+   projectTaken
    } from './factoryfunct';
 
 //set project var
@@ -146,8 +147,11 @@ function projectForm() {
     const data = Object.fromEntries(new FormData(e.target).entries());
     let projectForm = data.project
     
-    projectNameArray(projectForm)
+    let projectList = projectTaken(projectForm)
 
+    if (projectList == -1){
+    projectNameArray(projectForm)
+    }
 
 
   });

@@ -98,7 +98,11 @@ function projectNameArray(projectName) {
   //return projectListArray
 }
 
+function projectTaken(project) {
 
+return projectListArray.indexOf(project)
+
+}
 
 function currentProject(arrayNumber) {
 
@@ -121,7 +125,8 @@ export {
   returnProjectArray,
   deleteToDoFromProjectArray,
   deleteProjectFromProjectArray,
-  deleteProjectFromProjectListArray
+  deleteProjectFromProjectListArray,
+  projectTaken
 };
 
 
