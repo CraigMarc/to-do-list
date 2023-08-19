@@ -159,12 +159,15 @@ function addProjectTabs(projectListArray) {
     div1.value = i
     div1.textContent = projectListArray[i]
     //buttons
+    if (i > 0) {
     let deleteButton = document.createElement('button');
     deleteButton.setAttribute('type', 'button');
     deleteButton.setAttribute('id', 'projectDelete');
     deleteButton.setAttribute('value', i);
     deleteButton.textContent = 'Delete'
     projectContainer.appendChild(deleteButton);
+    }
+   
     projectContainer.appendChild(div1);
 
     document.body.appendChild(projectContainer)
