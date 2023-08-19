@@ -1,4 +1,11 @@
-import { addToProject, projectNameArray, currentProject, returnProjectArray, deleteToDoFromProjectArray } from './factoryfunct';
+import { addToProject,
+   projectNameArray, 
+   currentProject, 
+   returnProjectArray, 
+   deleteToDoFromProjectArray,
+   deleteProjectFromProjectArray,
+   deleteProjectFromProjectListArray
+   } from './factoryfunct';
 
 //set project var
 let returnProject = []
@@ -88,7 +95,7 @@ function clearTable(todoArray) {
 
 
 //delete todo
-function deleteToDo(value, todoArray) {
+function deleteToDo(value) {
 
 
 deleteToDoFromProjectArray(returnProject[0], value)
@@ -138,7 +145,7 @@ function projectForm() {
     e.preventDefault()
     const data = Object.fromEntries(new FormData(e.target).entries());
     let projectForm = data.project
-    console.log(projectForm)
+    
     projectNameArray(projectForm)
 
 
@@ -153,17 +160,19 @@ function addProjectTabs(projectListArray) {
   for (let i = 0; i < projectListArray.length; i++) {
     
     const projectContainer = document.createElement('div');
-
+    projectContainer.id = 'projectContainer';
     const div1 = document.createElement('div');
     div1.id = 'projecttab';
     div1.value = i
     div1.textContent = projectListArray[i]
+
     //buttons
     if (i > 0) {
     let deleteButton = document.createElement('button');
     deleteButton.setAttribute('type', 'button');
     deleteButton.setAttribute('id', 'projectDelete');
     deleteButton.setAttribute('value', i);
+    deleteButton.classList.add(projectListArray[i]);
     deleteButton.textContent = 'Delete'
     projectContainer.appendChild(deleteButton);
     }
@@ -191,10 +200,16 @@ function projectDeleteListener() {
 
   })
 }
+// delete project
 
 function deleteProject (e) {
-console.log(e.target.value)
+console.log(e.target.className)
 
+deleteProjectFromProjectArray(e.target.className)
+let projectListArray = deleteProjectFromProjectListArray(e.target.className)
+
+removeProjectTabs()
+addProjectTabs(projectListArray)
 
 }
 
@@ -210,7 +225,14 @@ function removeProjectTabs() {
     proj.remove();
   });
 
+  const deleteTab = document.querySelectorAll('#projectDelete');
 
+  deleteTab.forEach(proj => {
+    proj.remove();
+  });
+
+  const container = document.getElementById('projectContainer');
+  container.remove();
 
 }
 
