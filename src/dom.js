@@ -82,12 +82,7 @@ function clearTable(todoArray) {
     proj.remove();
   });
 
-/*
-  for (let i = 1; i < todoArray.length + 1; i++) {
-    document.getElementById("todoTable").deleteRow(1);
 
-
-  }*/
 }
 
 
@@ -102,7 +97,7 @@ deleteToDoFromProjectArray(returnProject[0], value)
   displayToDos(returnProjectArray(returnProject[0]))
 }
 
-// will have to take out inboxarray variables ********
+
 
 function form() {
 let todoArray = addToProject()
@@ -150,7 +145,7 @@ function projectForm() {
 
   });
 }
-
+//adds new project tabs and buttons
 function addProjectTabs(projectListArray) {
 
 
@@ -161,6 +156,15 @@ function addProjectTabs(projectListArray) {
     div1.id = 'projecttab';
     div1.value = i
     div1.textContent = projectListArray[i]
+    //buttons
+    let deleteButton = document.createElement('button');
+    deleteButton.setAttribute('type', 'button');
+    deleteButton.setAttribute('id', 'deleteButton');
+    deleteButton.setAttribute('value', i);
+    deleteButton.textContent = 'Delete'
+    div1.appendChild(deleteButton);
+
+
     document.body.appendChild(div1)
 
   }
@@ -171,7 +175,7 @@ function addProjectTabs(projectListArray) {
 
 
 }
-
+//removes project tabs when refresh
 
 function removeProjectTabs() {
 
@@ -198,7 +202,7 @@ function projectTabListener() {
   })
 }
 
-
+//selects project
 
 function selectProject(e) {
 
@@ -209,7 +213,7 @@ function selectProject(e) {
   return currentProject(e.target.value)
 
 }
-
+//saves keeps track of current project
 function projectNow(project){
   if (project == undefined) {
     return returnProject[0]
