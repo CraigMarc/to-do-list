@@ -1,6 +1,6 @@
 
 import './styles.css';
-import {form, projectForm} from './dom';
+import {form, projectForm, historyTabListener} from './dom';
 
 
 
@@ -10,5 +10,5 @@ form()
 
 projectForm()
 
-
+historyTabListener()
 

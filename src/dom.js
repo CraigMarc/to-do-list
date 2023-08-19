@@ -184,11 +184,12 @@ function addProjectTabs(projectListArray) {
     projectContainer.appendChild(div1);
 
     document.body.appendChild(projectContainer)
-
+    
   }
   
   projectDeleteListener()
   projectTabListener()
+  
   return
 }
 
@@ -272,7 +273,23 @@ function projectNow(project){
   returnProject[0] = project
   return returnProject
 }
+// history tab event listener
 
+function historyTabListener() {
+  const select = document.querySelectorAll('#timetab');
+
+  select.forEach((button) => {
+
+    button.addEventListener('click', selectTime)
+
+
+  })
+}
+
+function selectTime (e) {
+
+  console.log(e.target.classList.value)
+}
 
 
 
@@ -283,7 +300,8 @@ export {
   addProjectTabs,
   removeProjectTabs,
   selectProject,
-  projectNow
+  projectNow,
+  historyTabListener
 };
 
 
