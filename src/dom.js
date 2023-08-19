@@ -151,6 +151,8 @@ function addProjectTabs(projectListArray) {
 
 
   for (let i = 0; i < projectListArray.length; i++) {
+    
+    const projectContainer = document.createElement('div');
 
     const div1 = document.createElement('div');
     div1.id = 'projecttab';
@@ -159,22 +161,42 @@ function addProjectTabs(projectListArray) {
     //buttons
     let deleteButton = document.createElement('button');
     deleteButton.setAttribute('type', 'button');
-    deleteButton.setAttribute('id', 'deleteButton');
+    deleteButton.setAttribute('id', 'projectDelete');
     deleteButton.setAttribute('value', i);
     deleteButton.textContent = 'Delete'
-    div1.appendChild(deleteButton);
+    projectContainer.appendChild(deleteButton);
+    projectContainer.appendChild(div1);
 
-
-    document.body.appendChild(div1)
+    document.body.appendChild(projectContainer)
 
   }
-  ;
-
+  
+  projectDeleteListener()
   projectTabListener()
   return
+}
+
+// project delete event listener
+
+function projectDeleteListener() {
+  const select = document.querySelectorAll('#projectDelete');
+
+  select.forEach((button) => {
+
+    button.addEventListener('click', deleteProject)
+
+
+  })
+}
+
+function deleteProject (e) {
+console.log(e.target.value)
 
 
 }
+
+
+
 //removes project tabs when refresh
 
 function removeProjectTabs() {
