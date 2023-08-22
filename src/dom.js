@@ -82,7 +82,7 @@ function deleteTable(todoArray) {
 
 
 // clear table when adding new item
-function clearTable(todoArray) {
+function clearTable() {
 
   const rowRem = document.querySelectorAll('#row');
 
@@ -108,7 +108,7 @@ deleteToDoFromProjectArray(returnProject[0], value)
 
 
 function form() {
-let todoArray = addToProject()
+//let todoArray = addToProject()
 
 //let todoArray = returnProjectArray(returnProject[0])
 
@@ -120,13 +120,15 @@ let todoArray = addToProject()
     let priorityForm = data.priority
     let projectForm = projectNow()
 
-
+    let todoArray = returnProjectArray(returnProject[0])
+    console.log(todoArray)
     if (todoArray.length > 0) {
       clearTable(returnProjectArray(returnProject[0]))
     }
-    //todoArray = returnProjectArray(returnProject[0])
+    todoArray = returnProjectArray(returnProject[0])
+   
     addToProject(projectForm, descriptionForm, dateForm, priorityForm)
-
+   
     displayToDos(returnProjectArray(returnProject[0]))
    
   

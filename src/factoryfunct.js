@@ -3,7 +3,7 @@
 import { addProjectTabs, removeProjectTabs, projectNow } from './dom';
 
 
-let projectListArray = ['inbox',]
+//let projectListArray = ['inbox',]
 //let projectArray = []
 
 const todoFactory = (project, description, dueDate, priority) => {
