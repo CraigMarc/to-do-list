@@ -42,7 +42,7 @@ function displayToDos(todoArray) {
 
     console.log(returnProject[0])
 
-    if (returnProject[0] != 'week' && returnProject[0] != 'month' ){
+    if (returnProject[0] != 'Due This Week' && returnProject[0] != 'Due This Month' ){
     let deleteButton = document.createElement('button');
     deleteButton.setAttribute('type', 'button');
     deleteButton.setAttribute('id', 'deleteButton');
@@ -297,14 +297,14 @@ function selectTime (e) {
   
 
   if (e.target.classList.value == 'week') {
-    returnProject[0] = 'week'
+    returnProject[0] = 'Due This Week'
     clearTable()
     displayToDos(getWeek())
     
   }
 
   if (e.target.classList.value == 'month') {
-    returnProject[0] = 'month'
+    returnProject[0] = 'Due This Month'
     clearTable()
     displayToDos(getDaysInMonth())
 
