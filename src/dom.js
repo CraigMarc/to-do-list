@@ -5,7 +5,8 @@ import { addToProject,
    deleteToDoFromProjectArray,
    deleteProjectFromProjectArray,
    deleteProjectFromProjectListArray,
-   projectTaken
+   projectTaken,
+   getWeek
    } from './factoryfunct';
 
 //set project var
@@ -121,7 +122,7 @@ function form() {
     let projectForm = projectNow()
 
     let todoArray = returnProjectArray(returnProject[0])
-    console.log(todoArray)
+   
     if (todoArray.length > 0) {
       clearTable(returnProjectArray(returnProject[0]))
     }
@@ -210,7 +211,7 @@ function projectDeleteListener() {
 // delete project
 
 function deleteProject (e) {
-console.log(e.target.className)
+
 
 deleteProjectFromProjectArray(e.target.className)
 let projectListArray = deleteProjectFromProjectListArray(e.target.className)
@@ -291,8 +292,12 @@ function historyTabListener() {
 function selectTime (e) {
 
   console.log(e.target.classList.value)
-}
 
+  if (e.target.classList.value == 'week') {
+    getWeek()
+  }
+
+}
 
 
 
@@ -303,7 +308,8 @@ export {
   removeProjectTabs,
   selectProject,
   projectNow,
-  historyTabListener
+  historyTabListener,
+  
 };
 
 

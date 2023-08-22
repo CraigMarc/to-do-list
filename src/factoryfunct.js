@@ -50,7 +50,7 @@ function addToProject(projectName, description, dueDate, priority) {
     return toDo.toDoArray
   }
   toDo.addToDo(todoFactory(projectName, description, dueDate, priority))
-console.log(toDo.toDoArray)
+
   //projectArray.push(todoFactory(projectName, description, dueDate, priority))
 
   //return projectArray
@@ -96,7 +96,7 @@ function deleteProjectFromProjectArray(project) {
 
     let projectArr = findProjects(project)
     if (projectArr.length == 0) {
-      console.log(toDo.toDoArray)
+      
       return toDo.toDoArray
     }
 
@@ -124,7 +124,7 @@ function deleteProjectFromProjectListArray(project) {
 
  projectList.projectListArr.splice(index, 1)
 
-console.log(projectList.projectListArr)
+
 return projectList.projectListArr
 
 }
@@ -176,9 +176,23 @@ function getWeek() {
     let day = new Date(curr.setDate(first)).toISOString().slice(0, 10)
     week.push(day)
   }
-  return week 
+  //push new array with todos for the week
+  let result = [];
+  for (let i = 0; i < week.length; i++) {
+    let weekResult = week[i]
+  toDo.toDoArray.forEach((project, index) => project.dueDate === weekResult ? result.push(index) : null)
+  //projectArray.forEach((project, index) => project.project === projectFind ? result.push(index) : null)
+}
+
+let weekArray = []
+for (let i =0; i < result.length; i++){
+
+  weekArray.push(toDo.toDoArray[result[i]])
+}
+console.log(weekArray)
+  return weekArray
   }
-  console.log(getWeek())
+  
   
   
   //get days of the month
@@ -214,7 +228,8 @@ export {
   deleteToDoFromProjectArray,
   deleteProjectFromProjectArray,
   deleteProjectFromProjectListArray,
-  projectTaken
+  projectTaken,
+  getWeek
 };
 
 
