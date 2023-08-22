@@ -1,8 +1,10 @@
+"use strict";
+
 import { addProjectTabs, removeProjectTabs, projectNow } from './dom';
 
 
 let projectListArray = ['inbox',]
-let projectArray = []
+//let projectArray = []
 
 const todoFactory = (project, description, dueDate, priority) => {
 
@@ -10,22 +12,57 @@ const todoFactory = (project, description, dueDate, priority) => {
 
 };
 
+//to do array module
+const toDo = (() => {
+  let toDoArray = []
+
+  //adds new todos to array
+  const addToDo = (newToDo) => {
+
+     toDoArray.push(newToDo)
+  };
+
+
+  return { toDoArray, addToDo };
+})();
+
+//project array module
+const projectList = (() => {
+
+  let projectListArr = ['inbox']
+
+  //adds new todos to array
+  const addProject = (project) => {
+
+     projectListArr.push(project)
+  };
+
+
+  return { projectListArr, addProject };
+})();
+
+
 /*add to project array*/
 function addToProject(projectName, description, dueDate, priority) {
 
   if (description == undefined) {
-    return projectArray
+    //return projectArray
+    return toDo.toDoArray
   }
+  toDo.addToDo(todoFactory(projectName, description, dueDate, priority))
+console.log(toDo.toDoArray)
+  //projectArray.push(todoFactory(projectName, description, dueDate, priority))
 
-  projectArray.push(todoFactory(projectName, description, dueDate, priority))
-
-  return projectArray
+  //return projectArray
+  return toDo.toDoArray
 }
 
 //filter array 
 function returnProjectArray(projectName) {
 
-  return projectArray.filter(function (x) { return x.project == projectName })
+   return toDo.toDoArray.filter(function (x) { return x.project == projectName })
+  
+  //return projectArray.filter(function (x) { return x.project == projectName })
 
 }
 
@@ -33,7 +70,8 @@ function returnProjectArray(projectName) {
 function findProjects(projectFind) {
   let result = [];
 
-  projectArray.forEach((project, index) => project.project === projectFind ? result.push(index) : null)
+  toDo.toDoArray.forEach((project, index) => project.project === projectFind ? result.push(index) : null)
+  //projectArray.forEach((project, index) => project.project === projectFind ? result.push(index) : null)
   
   return result
 }
@@ -44,9 +82,10 @@ function deleteToDoFromProjectArray(project, value) {
 
   let projectArr = findProjects(project)
 
+  toDo.toDoArray.splice(projectArr[value], 1)
 
-  projectArray.splice(projectArr[value], 1)
-  return projectArray
+  //projectArray.splice(projectArr[value], 1)
+  return toDo.toDoArray
 }
 
 // delete project from array
@@ -57,10 +96,13 @@ function deleteProjectFromProjectArray(project) {
 
     let projectArr = findProjects(project)
     if (projectArr.length == 0) {
-      console.log(projectArray)
-      return projectArray
+      console.log(toDo.toDoArray)
+      return toDo.toDoArray
     }
-    projectArray.splice(projectArr[0], 1)
+
+    toDo.toDoArray.splice(projectArr[0], 1)
+
+   // projectArray.splice(projectArr[0], 1)
     recursion()
 
   }
@@ -71,12 +113,20 @@ function deleteProjectFromProjectArray(project) {
 
 function deleteProjectFromProjectListArray(project) {
 
-  let index = projectListArray.indexOf(project)
+  //let index = projectListArray.indexOf(project)
 
-  projectListArray.splice(index, 1)
+ // projectListArray.splice(index, 1)
 
-  console.log(projectListArray)
-  return projectListArray
+  //console.log(projectListArray)
+ // return projectListArray
+
+ let index = projectList.projectListArr.indexOf(project)
+
+ projectList.projectListArr.splice(index, 1)
+
+console.log(projectList.projectListArr)
+return projectList.projectListArr
+
 }
 
 
@@ -86,32 +136,33 @@ function deleteProjectFromProjectListArray(project) {
 
 
 function projectNameArray(projectName) {
-  projectListArray.push(projectName)
+
+  projectList.addProject(projectName)
 
 
-  if (projectListArray.length > 1) {
+  if (projectList.projectListArr.length > 1) {
 
     removeProjectTabs()
   }
-  addProjectTabs(projectListArray)
+  addProjectTabs(projectList.projectListArr)
 
   //return projectListArray
 }
 
 function projectTaken(project) {
 
-return projectListArray.indexOf(project)
+return projectList.projectListArr.indexOf(project)
 
 }
 
 function currentProject(arrayNumber) {
 
-  if (projectListArray.length == 1) {
-    projectNow(projectListArray[0])
-    return projectListArray[0]
+  if (projectList.projectListArr.length == 1) {
+    projectNow(projectList.projectListArr[0])
+    return projectList.projectListArr[0]
   }
-  projectNow(projectListArray[arrayNumber])
-  return (projectListArray[arrayNumber])
+  projectNow(projectList.projectListArr[arrayNumber])
+  return (projectList.projectListArr[arrayNumber])
 
 }
 
