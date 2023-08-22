@@ -40,14 +40,16 @@ function displayToDos(todoArray) {
     cell2.textContent = todoArray[i].dueDate;
     cell3.textContent = todoArray[i].priority;
 
+    console.log(returnProject[0])
 
+    if (returnProject[0] != 'week' && returnProject[0] != 'month' ){
     let deleteButton = document.createElement('button');
     deleteButton.setAttribute('type', 'button');
     deleteButton.setAttribute('id', 'deleteButton');
     deleteButton.setAttribute('value', i);
     deleteButton.textContent = 'Delete'
     cell4.appendChild(deleteButton);
-
+    }
     /*delete button event listener*/
 
     const number = document.querySelectorAll('#deleteButton');
@@ -292,17 +294,17 @@ function historyTabListener() {
 
 function selectTime (e) {
 
-  console.log(e.target.classList.value)
+  
 
   if (e.target.classList.value == 'week') {
-    //getWeek()
+    returnProject[0] = 'week'
     clearTable()
     displayToDos(getWeek())
     
   }
 
   if (e.target.classList.value == 'month') {
-    //getDaysInMonth()
+    returnProject[0] = 'month'
     clearTable()
     displayToDos(getDaysInMonth())
 
