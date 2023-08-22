@@ -295,11 +295,17 @@ function selectTime (e) {
   console.log(e.target.classList.value)
 
   if (e.target.classList.value == 'week') {
-    getWeek()
+    //getWeek()
+    clearTable()
+    displayToDos(getWeek())
+    
   }
 
   if (e.target.classList.value == 'month') {
-    getDaysInMonth()
+    //getDaysInMonth()
+    clearTable()
+    displayToDos(getDaysInMonth())
+
   }
 
 
