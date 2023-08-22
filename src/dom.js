@@ -6,7 +6,8 @@ import { addToProject,
    deleteProjectFromProjectArray,
    deleteProjectFromProjectListArray,
    projectTaken,
-   getWeek
+   getWeek,
+   getDaysInMonth
    } from './factoryfunct';
 
 //set project var
@@ -296,6 +297,11 @@ function selectTime (e) {
   if (e.target.classList.value == 'week') {
     getWeek()
   }
+
+  if (e.target.classList.value == 'month') {
+    getDaysInMonth()
+  }
+
 
 }
 

@@ -19,7 +19,7 @@ const toDo = (() => {
   //adds new todos to array
   const addToDo = (newToDo) => {
 
-     toDoArray.push(newToDo)
+    toDoArray.push(newToDo)
   };
 
 
@@ -34,7 +34,7 @@ const projectList = (() => {
   //adds new todos to array
   const addProject = (project) => {
 
-     projectListArr.push(project)
+    projectListArr.push(project)
   };
 
 
@@ -60,8 +60,8 @@ function addToProject(projectName, description, dueDate, priority) {
 //filter array 
 function returnProjectArray(projectName) {
 
-   return toDo.toDoArray.filter(function (x) { return x.project == projectName })
-  
+  return toDo.toDoArray.filter(function (x) { return x.project == projectName })
+
   //return projectArray.filter(function (x) { return x.project == projectName })
 
 }
@@ -72,7 +72,7 @@ function findProjects(projectFind) {
 
   toDo.toDoArray.forEach((project, index) => project.project === projectFind ? result.push(index) : null)
   //projectArray.forEach((project, index) => project.project === projectFind ? result.push(index) : null)
-  
+
   return result
 }
 
@@ -96,13 +96,13 @@ function deleteProjectFromProjectArray(project) {
 
     let projectArr = findProjects(project)
     if (projectArr.length == 0) {
-      
+
       return toDo.toDoArray
     }
 
     toDo.toDoArray.splice(projectArr[0], 1)
 
-   // projectArray.splice(projectArr[0], 1)
+    // projectArray.splice(projectArr[0], 1)
     recursion()
 
   }
@@ -115,17 +115,17 @@ function deleteProjectFromProjectListArray(project) {
 
   //let index = projectListArray.indexOf(project)
 
- // projectListArray.splice(index, 1)
+  // projectListArray.splice(index, 1)
 
   //console.log(projectListArray)
- // return projectListArray
+  // return projectListArray
 
- let index = projectList.projectListArr.indexOf(project)
+  let index = projectList.projectListArr.indexOf(project)
 
- projectList.projectListArr.splice(index, 1)
+  projectList.projectListArr.splice(index, 1)
 
 
-return projectList.projectListArr
+  return projectList.projectListArr
 
 }
 
@@ -151,7 +151,7 @@ function projectNameArray(projectName) {
 
 function projectTaken(project) {
 
-return projectList.projectListArr.indexOf(project)
+  return projectList.projectListArr.indexOf(project)
 
 }
 
@@ -168,11 +168,11 @@ function currentProject(arrayNumber) {
 
 //get dates for the week
 function getWeek() {
-  let curr = new Date 
+  let curr = new Date
   let week = []
-  
+
   for (let i = 0; i <= 6; i++) {
-    let first = curr.getDate() - curr.getDay() + i 
+    let first = curr.getDate() - curr.getDay() + i
     let day = new Date(curr.setDate(first)).toISOString().slice(0, 10)
     week.push(day)
   }
@@ -180,42 +180,57 @@ function getWeek() {
   let result = [];
   for (let i = 0; i < week.length; i++) {
     let weekResult = week[i]
-  toDo.toDoArray.forEach((project, index) => project.dueDate === weekResult ? result.push(index) : null)
-  //projectArray.forEach((project, index) => project.project === projectFind ? result.push(index) : null)
-}
+    toDo.toDoArray.forEach((project, index) => project.dueDate === weekResult ? result.push(index) : null)
 
-let weekArray = []
-for (let i =0; i < result.length; i++){
-
-  weekArray.push(toDo.toDoArray[result[i]])
-}
-console.log(weekArray)
-  return weekArray
   }
-  
-  
-  
-  //get days of the month
-  
-  function getDaysInMonth() {
-      const d = new Date();
-    let month = d.getMonth()
-    let year = d.getFullYear()
-  
-      let date = new Date(year, month, 1);
-      let days = [];
-      while (date.getMonth() === month) {
-        days.push(new Date(date).toISOString().slice(0, 10));
-        date.setDate(date.getDate() + 1);
-      }
-      return days;
-    }
-  
-  
-  
-    console.log(getDaysInMonth())
-   
-  
+
+  let weekArray = []
+  for (let i = 0; i < result.length; i++) {
+
+    weekArray.push(toDo.toDoArray[result[i]])
+  }
+  console.log(weekArray)
+  return weekArray
+}
+
+
+
+//get days of the month
+
+function getDaysInMonth() {
+  const d = new Date();
+  let month = d.getMonth()
+  let year = d.getFullYear()
+
+  let date = new Date(year, month, 1);
+  let days = [];
+  while (date.getMonth() === month) {
+    days.push(new Date(date).toISOString().slice(0, 10));
+    date.setDate(date.getDate() + 1);
+  }
+
+  let result = [];
+  for (let i = 0; i < days.length; i++) {
+    let monthResult = days[i]
+    toDo.toDoArray.forEach((project, index) => project.dueDate === monthResult ? result.push(index) : null)
+
+  }
+
+  let monthArray = []
+  for (let i = 0; i < result.length; i++) {
+
+    monthArray.push(toDo.toDoArray[result[i]])
+  }
+  console.log(monthArray)
+  return monthArray
+
+
+}
+
+
+
+
+
 
 
 
@@ -229,7 +244,8 @@ export {
   deleteProjectFromProjectArray,
   deleteProjectFromProjectListArray,
   projectTaken,
-  getWeek
+  getWeek,
+  getDaysInMonth
 };
 
 
