@@ -12,7 +12,22 @@ import { addToProject,
 
 //set project var
 let returnProject = []
-projectNow('inbox')
+//module for current project
+
+const newProject = (() => {
+  let currentProjectArray = []
+
+  //adds new todos to array
+  const changeProject = (newProject) => {
+
+    currentProjectArray[0] = (newProject)
+  };
+})
+
+
+
+
+projectNow('Inbox')
 
 // display todos
 

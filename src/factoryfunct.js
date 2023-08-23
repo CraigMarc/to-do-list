@@ -29,7 +29,7 @@ const toDo = (() => {
 //project array module
 const projectList = (() => {
 
-  let projectListArr = ['inbox']
+  let projectListArr = ['Inbox']
 
   //adds new todos to array
   const addProject = (project) => {
@@ -189,7 +189,7 @@ function getWeek() {
 
     weekArray.push(toDo.toDoArray[result[i]])
   }
-  console.log(weekArray)
+  
   return weekArray
 }
 
@@ -221,7 +221,7 @@ function getDaysInMonth() {
 
     monthArray.push(toDo.toDoArray[result[i]])
   }
-  console.log(monthArray)
+  
   return monthArray
 
 
