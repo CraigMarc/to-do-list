@@ -263,7 +263,8 @@ function projectTabListener() {
 //selects project
 
 function selectProject(e) {
-
+  //may need to remove
+  returnProject[0] = currentProject(e.target.value)
   clearTable(returnProjectArray(returnProject[0]))
   displayToDos(returnProjectArray(returnProject[0]))
 
@@ -323,7 +324,7 @@ export {
   selectProject,
   projectNow,
   historyTabListener,
-  
+  projectTabListener
 };
 
 
