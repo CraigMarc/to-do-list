@@ -65,7 +65,7 @@ function displayToDos(todoArray) {
     cell2.textContent = todoArray[i].dueDate;
     cell3.textContent = todoArray[i].priority;
 
-    console.log(newProject.currentProjectArray[0])
+    
 
     if (newProject.currentProjectArray[0] != 'Due This Week' 
     && newProject.currentProjectArray[0] != 'Due This Month' ){

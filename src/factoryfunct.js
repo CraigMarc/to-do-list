@@ -245,7 +245,8 @@ export {
   deleteProjectFromProjectListArray,
   projectTaken,
   getWeek,
-  getDaysInMonth
+  getDaysInMonth,
+  
 };
 
 
