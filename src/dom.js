@@ -11,7 +11,7 @@ import { addToProject,
    } from './factoryfunct';
 
 //set project var
-let returnProject = []
+//let returnProject = []
 //module for current project
 
 const newProject = (() => {
@@ -51,14 +51,24 @@ function displayToDos(todoArray) {
     let cell4 = row.insertCell(3);
     cell4.setAttribute('id', 'cell4');
 
+    if (newProject.currentProjectArray[0] == 'Due This Week' 
+    || newProject.currentProjectArray[0] == 'Due This Month' ){
+
+    cell1.textContent = todoArray[i].description + '(' + todoArray[i].project + ')' ;
+    }
+
+    if (newProject.currentProjectArray[0] != 'Due This Week' 
+    && newProject.currentProjectArray[0] != 'Due This Month' ){
 
     cell1.textContent = todoArray[i].description;
+    }
     cell2.textContent = todoArray[i].dueDate;
     cell3.textContent = todoArray[i].priority;
 
     console.log(newProject.currentProjectArray[0])
 
-    if (newProject.currentProjectArray[0] != 'Due This Week' && newProject.currentProjectArray[0] != 'Due This Month' ){
+    if (newProject.currentProjectArray[0] != 'Due This Week' 
+    && newProject.currentProjectArray[0] != 'Due This Month' ){
     let deleteButton = document.createElement('button');
     deleteButton.setAttribute('type', 'button');
     deleteButton.setAttribute('id', 'deleteButton');
