@@ -1,10 +1,9 @@
 "use strict";
 
 import { addProjectTabs, removeProjectTabs, projectNow } from './dom';
+import { storeToDo, storeProject } from './storage';
 
 
-//let projectListArray = ['inbox',]
-//let projectArray = []
 
 const todoFactory = (project, description, dueDate, priority) => {
 
@@ -35,6 +34,8 @@ const projectList = (() => {
   const addProject = (project) => {
 
     projectListArr.push(project)
+
+    storeProject(projectListArr)
   };
 
 
@@ -51,9 +52,8 @@ function addToProject(projectName, description, dueDate, priority) {
   }
   toDo.addToDo(todoFactory(projectName, description, dueDate, priority))
 
-  //projectArray.push(todoFactory(projectName, description, dueDate, priority))
-
-  //return projectArray
+  storeToDo(toDo.toDoArray)
+  
   return toDo.toDoArray
 }
 
@@ -84,7 +84,8 @@ function deleteToDoFromProjectArray(project, value) {
 
   toDo.toDoArray.splice(projectArr[value], 1)
 
-  //projectArray.splice(projectArr[value], 1)
+  storeToDo(toDo.toDoArray)
+
   return toDo.toDoArray
 }
 
