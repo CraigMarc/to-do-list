@@ -17,12 +17,13 @@ let returnProject = []
 const newProject = (() => {
   let currentProjectArray = []
 
-  //adds new todos to array
+  //adds new project
   const changeProject = (newProject) => {
 
     currentProjectArray[0] = (newProject)
   };
-})
+  return { currentProjectArray, changeProject };
+})();
 
 
 
@@ -35,7 +36,7 @@ function displayToDos(todoArray) {
 
 //change title
   const title = document.querySelector('#title');
-  title.textContent = returnProject[0];
+  title.textContent = newProject.currentProjectArray[0];
   
   
 
@@ -55,9 +56,9 @@ function displayToDos(todoArray) {
     cell2.textContent = todoArray[i].dueDate;
     cell3.textContent = todoArray[i].priority;
 
-    console.log(returnProject[0])
+    console.log(newProject.currentProjectArray[0])
 
-    if (returnProject[0] != 'Due This Week' && returnProject[0] != 'Due This Month' ){
+    if (newProject.currentProjectArray[0] != 'Due This Week' && newProject.currentProjectArray[0] != 'Due This Month' ){
     let deleteButton = document.createElement('button');
     deleteButton.setAttribute('type', 'button');
     deleteButton.setAttribute('id', 'deleteButton');
@@ -118,10 +119,10 @@ function clearTable() {
 function deleteToDo(value) {
 
 
-deleteToDoFromProjectArray(returnProject[0], value)
+deleteToDoFromProjectArray(newProject.currentProjectArray[0], value)
 
-  clearTable(returnProjectArray(returnProject[0]))
-  displayToDos(returnProjectArray(returnProject[0]))
+  clearTable(returnProjectArray(newProject.currentProjectArray[0]))
+  displayToDos(returnProjectArray(newProject.currentProjectArray[0]))
 }
 
 
@@ -139,16 +140,16 @@ function form() {
     let priorityForm = data.priority
     let projectForm = projectNow()
 
-    let todoArray = returnProjectArray(returnProject[0])
+    let todoArray = returnProjectArray(newProject.currentProjectArray[0])
    
     if (todoArray.length > 0) {
-      clearTable(returnProjectArray(returnProject[0]))
+      clearTable(returnProjectArray(newProject.currentProjectArray[0]))
     }
-    todoArray = returnProjectArray(returnProject[0])
+    todoArray = returnProjectArray(newProject.currentProjectArray[0])
    
     addToProject(projectForm, descriptionForm, dateForm, priorityForm)
    
-    displayToDos(returnProjectArray(returnProject[0]))
+    displayToDos(returnProjectArray(newProject.currentProjectArray[0]))
    
   
 
@@ -278,10 +279,10 @@ function projectTabListener() {
 //selects project
 
 function selectProject(e) {
-  //may need to remove
-  returnProject[0] = currentProject(e.target.value)
-  clearTable(returnProjectArray(returnProject[0]))
-  displayToDos(returnProjectArray(returnProject[0]))
+  
+  newProject.changeProject(currentProject(e.target.value))
+  clearTable(returnProjectArray(newProject.currentProjectArray[0]))
+  displayToDos(returnProjectArray(newProject.currentProjectArray[0]))
 
 
   return currentProject(e.target.value)
@@ -290,10 +291,12 @@ function selectProject(e) {
 //saves keeps track of current project
 function projectNow(project){
   if (project == undefined) {
-    return returnProject[0]
+    return newProject.currentProjectArray[0]
   }
-  returnProject[0] = project
-  return returnProject
+  
+  newProject.changeProject(project)
+
+  return newProject.currentProjectArray[0]
 }
 // history tab event listener
 
@@ -313,14 +316,14 @@ function selectTime (e) {
   
 
   if (e.target.classList.value == 'week') {
-    returnProject[0] = 'Due This Week'
+    newProject.changeProject('Due This Week')
     clearTable()
     displayToDos(getWeek())
     
   }
 
   if (e.target.classList.value == 'month') {
-    returnProject[0] = 'Due This Month'
+    newProject.changeProject('Due This Month')
     clearTable()
     displayToDos(getDaysInMonth())
 
