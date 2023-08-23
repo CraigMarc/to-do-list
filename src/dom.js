@@ -352,7 +352,9 @@ export {
   selectProject,
   projectNow,
   historyTabListener,
-  projectTabListener
+  projectTabListener,
+  displayToDos,
+  
 };
 
 

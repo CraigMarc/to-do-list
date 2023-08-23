@@ -1,9 +1,37 @@
 "use strict";
 
-import { addProjectTabs, removeProjectTabs, projectNow } from './dom';
-import { storeToDo, storeProject } from './storage';
+import { addProjectTabs, removeProjectTabs, projectNow, displayToDos } from './dom';
+import { storeToDo, storeProject, storedToDo, storedProject } from './storage';
 
 
+
+function getStoredArrays() {
+  
+  let storedTodo1 = storedToDo()
+  let storedProject1 = storedProject()
+console.log(storedTodo1)
+console.log(storedProject1)
+
+if (storedTodo1 != null) {
+for (let i = 0; i < storedTodo1.length; i++) {
+
+  toDo.addToDo(storedTodo1[i])
+}
+}
+
+displayToDos(toDo.toDoArray)
+
+if (storedProject1 != null) {
+for (let i = 1; i < storedProject1.length; i++) {
+
+  projectList.addProject(storedProject1[i])
+}
+  removeProjectTabs()
+  addProjectTabs(projectList.projectListArr)
+}
+}
+
+//to do factory funct
 
 const todoFactory = (project, description, dueDate, priority) => {
 
@@ -103,7 +131,7 @@ function deleteProjectFromProjectArray(project) {
 
     toDo.toDoArray.splice(projectArr[0], 1)
 
-    // projectArray.splice(projectArr[0], 1)
+    
     recursion()
 
   }
@@ -114,17 +142,13 @@ function deleteProjectFromProjectArray(project) {
 
 function deleteProjectFromProjectListArray(project) {
 
-  //let index = projectListArray.indexOf(project)
-
-  // projectListArray.splice(index, 1)
-
-  //console.log(projectListArray)
-  // return projectListArray
+  
 
   let index = projectList.projectListArr.indexOf(project)
 
   projectList.projectListArr.splice(index, 1)
 
+storeProject(projectList.projectListArr)
 
   return projectList.projectListArr
 
@@ -247,7 +271,7 @@ export {
   projectTaken,
   getWeek,
   getDaysInMonth,
-  
+  getStoredArrays
 };
 
 

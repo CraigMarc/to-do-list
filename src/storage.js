@@ -15,7 +15,27 @@ function storeProject(projectArray) {
 
 }
 
+function storedToDo() {
+
+    let storedToDos = JSON.parse(localStorage.getItem("toDoArray"));
+    return storedToDos
+}
+
+function storedProject() {
+
+    //localStorage.removeItem("projectArray");
+
+    let storedProjects = JSON.parse(localStorage.getItem("projectArray")); 
+    return storedProjects
+
+}
+
+
+
+
 export {
     storeToDo,
-    storeProject
+    storeProject,
+    storedToDo,
+    storedProject
 };
