@@ -1,14 +1,16 @@
 
 import './styles.css';
-import {form, projectForm, historyTabListener, projectTabListener, displayForm, hideForm} from './dom';
+import {form, projectForm, historyTabListener, projectTabListener} from './dom';
 import {getStoredArrays} from './factoryfunct';
 
 
-getStoredArrays()
 
 form()
+getStoredArrays()
 
-hideForm()
+
+
+
 
 projectForm()
 
@@ -16,4 +18,3 @@ historyTabListener()
 
 projectTabListener()
 
-displayForm()

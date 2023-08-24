@@ -142,8 +142,9 @@ function form() {
 
 //let todoArray = returnProjectArray(returnProject[0])
 
-  document.querySelector('form').addEventListener('submit', (e) => {
+  document.querySelector('#form').addEventListener('submit', (e) => {
     e.preventDefault()
+    console.log(e)
     const data = Object.fromEntries(new FormData(e.target).entries());
     let descriptionForm = data.description
     let dateForm = data.date
@@ -349,7 +350,7 @@ function selectTime (e) {
 }
 
 //display form
-
+/*
 function displayForm() {
 const btn = document.getElementById('showMenu');
 
@@ -362,7 +363,7 @@ btn.addEventListener('click', () => {
 function hideForm() {
 const form = document.getElementById('form');
 form.style.display = 'none';
-}
+}*/
 
 export {
   form,
@@ -374,8 +375,7 @@ export {
   historyTabListener,
   projectTabListener,
   displayToDos,
-  displayForm,
-  hideForm
+  
 };
 
 
