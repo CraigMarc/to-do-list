@@ -350,7 +350,7 @@ function selectTime (e) {
 }
 
 //display form
-/*
+
 function displayForm() {
 const btn = document.getElementById('showMenu');
 
@@ -363,7 +363,7 @@ btn.addEventListener('click', () => {
 function hideForm() {
 const form = document.getElementById('form');
 form.style.display = 'none';
-}*/
+}
 
 export {
   form,
@@ -375,7 +375,8 @@ export {
   historyTabListener,
   projectTabListener,
   displayToDos,
-  
+  displayForm,
+  hideForm
 };
 
 
