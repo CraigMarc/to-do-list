@@ -7,6 +7,31 @@
 </head>
 <body>
 <div id="grid">
+
+  <div id="menuContainer">
+    <div id="timetab" class="week">Due This Week</div>
+    <div id="timetab" class="month">Due This Month</div>
+
+    <form action="" id="projform">
+     
+     <div class="input">
+     <label for="project">Project:</label>
+     <input name="project" type="text" id="project" required>
+
+     <div class="submitproject">
+       <button type="submit">Add Project</button>
+       
+       </div>
+
+     </div>
+    </form>
+    
+<div id = 'projectContainer'>
+<div id="projecttab" value="0">Inbox</div>
+</div>
+</div>
+
+
 <div class="mainContainer">
   <div id="todoContainer">
     <h2 id="title">Inbox</h2>
@@ -53,28 +78,7 @@
         </div>
        </form>
 </div>
-       <div id="menuContainer">
-       <div id="timetab" class="week">Due This Week</div>
-       <div id="timetab" class="month">Due This Month</div>
-
-       <form action="" id="projform">
-        
-        <div class="input">
-        <label for="project">Project:</label>
-        <input name="project" type="text" id="project" required>
-
-        <div class="submitproject">
-          <button type="submit">Add Project</button>
-          
-          </div>
-
-        </div>
-       </form>
-       
-<div id = 'projectContainer'>
-  <div id="projecttab" value="0">Inbox</div>
-</div>
-</div>
+      
 </div>
     <script src="main.js"></script>
 </body>
