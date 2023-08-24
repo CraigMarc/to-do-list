@@ -156,7 +156,7 @@ function form() {
       clearTable(returnProjectArray(newProject.currentProjectArray[0]))
     }
     todoArray = returnProjectArray(newProject.currentProjectArray[0])
-   
+   console.log(data)
     addToProject(projectForm, descriptionForm, dateForm, priorityForm)
    
     displayToDos(returnProjectArray(newProject.currentProjectArray[0]))
