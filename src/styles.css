@@ -1,3 +1,8 @@
-.main {
-    color: red;
-}
+#grid {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+   
+  
+  }
+  

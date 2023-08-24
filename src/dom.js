@@ -190,6 +190,7 @@ function projectForm() {
 }
 //adds new project tabs and buttons
 function addProjectTabs(projectListArray) {
+  const grid = document.getElementById('grid')
   const menu = document.getElementById('menuContainer')
 
 
@@ -215,9 +216,10 @@ function addProjectTabs(projectListArray) {
    
     projectContainer.appendChild(div1);
     menu.appendChild(projectContainer)
+    grid.appendChild(menu)
 
   //document.body.appendChild(projectContainer)
-  document.body.appendChild(menu)
+  document.body.appendChild(grid)
   }
   
   projectDeleteListener()
