@@ -1,3 +1,5 @@
+
+
 "use strict";
 
 import { addProjectTabs, removeProjectTabs, projectNow, displayToDos } from './dom';
@@ -9,8 +11,7 @@ function getStoredArrays() {
   
   let storedTodo1 = storedToDo()
   let storedProject1 = storedProject()
-console.log(storedTodo1)
-console.log(storedProject1)
+
 
 if (storedTodo1 != null) {
 for (let i = 0; i < storedTodo1.length; i++) {
@@ -46,7 +47,7 @@ const toDo = (() => {
 
   //adds new todos to array
   const addToDo = (newToDo) => {
-
+    console.log(toDo.toDoArray)
     toDoArray.push(newToDo)
   };
 
