@@ -34,11 +34,15 @@ body {
  #projectDelete {
     background-color: red;
     color: white;
+    border-radius: 10px;
+    padding: 5px;
  }
 
  #deleteButton {
     background-color: red;
+    border-radius: 10px;
     color: white;
+    padding: 5px;
  }
 
  #timetab {
@@ -79,6 +83,19 @@ body {
  }
   
  #cell4 {
-    background-color: white;
+    background-color: #edebe4;
  }
 
+ .submitButton {
+    padding: 5px;
+    background-color: white;
+    border-radius: 10px;
+ }
+
+ .submit {
+    padding: 5px;
+ }
+
+ #description {
+    width: 60vw
+ }
