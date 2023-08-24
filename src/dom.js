@@ -190,18 +190,21 @@ function projectForm() {
 }
 //adds new project tabs and buttons
 function addProjectTabs(projectListArray) {
-  const grid = document.getElementById('grid')
+//const grid = document.getElementById('grid')
   const menu = document.getElementById('menuContainer')
 
 
   for (let i = 0; i < projectListArray.length; i++) {
    
     const projectContainer = document.createElement('div');
+
     projectContainer.id = 'projectContainer';
     const div1 = document.createElement('div');
     div1.id = 'projecttab';
     div1.value = i
     div1.textContent = projectListArray[i]
+
+    projectContainer.appendChild(div1);
 
     //buttons
     if (i > 0) {
@@ -214,12 +217,12 @@ function addProjectTabs(projectListArray) {
     projectContainer.appendChild(deleteButton);
     }
    
-    projectContainer.appendChild(div1);
+    
     menu.appendChild(projectContainer)
-    grid.appendChild(menu)
+  //grid.appendChild(menu)
 
   //document.body.appendChild(projectContainer)
-  document.body.appendChild(grid)
+  //document.menu.appendChild(menu)
   }
   
   projectDeleteListener()

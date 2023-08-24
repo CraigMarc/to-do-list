@@ -1,12 +1,69 @@
 body {
     width: 100%;
+    
 }
 
 #grid {
     width: 100%;
-    display: grid;
-    grid-template-columns: 50% 50%;
+   display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr;
+
+    justify-items: center;
+    height: 100vh;
+   /* display: flex;*/
+     }
+
+  #projectContainer {
+    width: 20%;
+    display: flex;
+    padding-top: 20px;
+    
   }
 
- 
+  .mainContainer {
+    height: 100%;
+    width: 100%;
+  }
+
+ #projectDelete {
+    background-color: red;
+    color: white;
+ }
+
+ #deleteButton {
+    background-color: red;
+    color: white;
+ }
+
+ #timetab {
+    padding: 20px;
+
+ }
+
+ #menuContainer {
+    background-color: gray;
+    height: 100%;
+ }
+
+ .th1 {
+    width: 50vw;
+ }
+
+ .th2 {
+    width: 15vw;
+ }
+
+ .th3 {
+    width: 10vw;
+ }
+
+ #row {
+    background-color: grey;
+    color: white;
+ }
+
+ td {
+    padding: 10px;
+ }
   
