@@ -19,7 +19,8 @@ for (let i = 0; i < storedTodo1.length; i++) {
 }
 }
 
-displayToDos(toDo.toDoArray)
+//displayToDos(toDo.toDoArray)
+displayToDos(returnProjectArray('Inbox'))
 
 if (storedProject1 != null) {
 for (let i = 1; i < storedProject1.length; i++) {
