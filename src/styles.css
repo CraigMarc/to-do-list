@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
 body {
     width: 100%;
-    
+    font-family: 'Roboto', sans-serif;
 }
 
 #grid {
@@ -15,15 +18,17 @@ body {
      }
 
   #projectContainer {
-    width: 20%;
+   
     display: flex;
     padding-top: 20px;
+    
     
   }
 
   .mainContainer {
     height: 100%;
     width: 100%;
+    background-color: #edebe4;
   }
 
  #projectDelete {
@@ -44,6 +49,8 @@ body {
  #menuContainer {
     background-color: gray;
     height: 100%;
+    text-align: center;
+    color: white;
  }
 
  .th1 {
@@ -52,6 +59,10 @@ body {
 
  .th2 {
     width: 15vw;
+ }
+
+ #title {
+    text-align: center;
  }
 
  .th3 {
@@ -67,3 +78,7 @@ body {
     padding: 10px;
  }
   
+ #cell4 {
+    background-color: white;
+ }
+
