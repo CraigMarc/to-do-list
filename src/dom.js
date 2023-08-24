@@ -144,7 +144,7 @@ function form() {
 
   document.querySelector('#form').addEventListener('submit', (e) => {
     e.preventDefault()
-    console.log(e)
+    hideForm()
     const data = Object.fromEntries(new FormData(e.target).entries());
     let descriptionForm = data.description
     let dateForm = data.date
@@ -165,6 +165,7 @@ function form() {
   
 
   });
+  
 }
 
 
@@ -296,7 +297,9 @@ function projectTabListener() {
 //selects project
 
 function selectProject(e) {
-  
+
+  showButton()
+
   newProject.changeProject(currentProject(e.target.value))
   clearTable(returnProjectArray(newProject.currentProjectArray[0]))
   displayToDos(returnProjectArray(newProject.currentProjectArray[0]))
@@ -330,7 +333,7 @@ function historyTabListener() {
 
 function selectTime (e) {
 
-  
+  hideButton()
 
   if (e.target.classList.value == 'week') {
     newProject.changeProject('Due This Week')
@@ -363,6 +366,18 @@ btn.addEventListener('click', () => {
 function hideForm() {
 const form = document.getElementById('form');
 form.style.display = 'none';
+const btn = document.getElementById('showMenu');
+btn.style.display = 'block';
+}
+
+function hideButton() { 
+  const btn = document.getElementById('showMenu');
+btn.style.display = 'none';
+}
+
+function showButton() {
+  const btn = document.getElementById('showMenu');
+btn.style.display = 'block';
 }
 
 export {
