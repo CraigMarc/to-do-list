@@ -11,7 +11,7 @@ body {
 #grid {
     width: 100%;
    display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 0.3fr 5fr;
     grid-template-rows: 1fr;
 
     justify-items: center;
@@ -22,9 +22,10 @@ body {
    
     display: flex;
     padding-top: 20px;
-    padding-left: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
   }
 
   .mainContainer {
@@ -124,3 +125,7 @@ table {
    padding: 5px;
 }
 
+#project {
+   width: 80%;
+
+}
