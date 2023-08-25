@@ -272,7 +272,14 @@ const projectTab = document.querySelectorAll('#projecttab');
 });*/
 
 
+<<<<<<< HEAD
 
+=======
+  const container = document.querySelectorAll('#projectContainer');
+  container.forEach(proj => {
+    proj.remove();
+  });
+>>>>>>> working
 }
 
 
