@@ -3,14 +3,14 @@
 function storeToDo(toDoArray) {
     console.log(toDoArray)
     console.log('storage')
-
+    //localStorage.removeItem('toDoArray')
     localStorage.setItem("toDoArray", JSON.stringify(toDoArray));
 
 
 }
 
 function storeProject(projectArray) {
-
+    //localStorage.removeItem('projectArray')
     localStorage.setItem("projectArray", JSON.stringify(projectArray));
 
 }

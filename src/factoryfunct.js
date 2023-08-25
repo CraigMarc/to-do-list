@@ -48,7 +48,7 @@ const toDo = (() => {
 
   //adds new todos to array
   const addToDo = (newToDo) => {
-    console.log(toDo.toDoArray)
+  
     toDoArray.push(newToDo)
   };
 
@@ -82,7 +82,7 @@ function addToProject(projectName, description, dueDate, priority) {
     return toDo.toDoArray
   }
   toDo.addToDo(todoFactory(projectName, description, dueDate, priority))
-
+  console.log(toDo.toDoArray)
   storeToDo(toDo.toDoArray)
   
   return toDo.toDoArray

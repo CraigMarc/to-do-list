@@ -300,7 +300,7 @@ function projectTabListener() {
 //selects project
 
 function selectProject(e) {
-
+  hideForm()
  showButton()
 
  newProject.changeProject(currentProject(e.target.value))
