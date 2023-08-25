@@ -97,7 +97,18 @@ function displayToDos(todoArray) {
  }
 }
 
+// delete table function when deleting to do **** may just use clear table now
+/*
+function deleteTable(todoArray) {
 
+
+
+ for (let i = 1; i < todoArray.length + 2; i++) {
+   document.getElementById("todoTable").deleteRow(1);
+
+
+ }
+}*/
 
 
 // clear table when adding new item
@@ -151,7 +162,6 @@ function form() {
   
    displayToDos(returnProjectArray(newProject.currentProjectArray[0]))
   
-   document.getElementById("form").reset();
  
 
  });
@@ -176,7 +186,7 @@ function projectForm() {
    if (projectList == -1){
    projectNameArray(projectForm)
    }
-   document.getElementById("projform").reset();
+
 
  });
 }
@@ -253,8 +263,8 @@ addProjectTabs(projectListArray)
 //removes project tabs when refresh
 
 function removeProjectTabs() {
-  
-const projectTab = document.querySelectorAll('#projecttab');
+
+ const projectTab = document.querySelectorAll('#projecttab');
 
  projectTab.forEach(proj => {
    proj.remove();
@@ -265,21 +275,11 @@ const projectTab = document.querySelectorAll('#projecttab');
  deleteTab.forEach(proj => {
    proj.remove();
  });
-/*
- const projectContainer = document.getElementById('projectContainer');
- projectContainer.forEach(proj => {
-  proj.remove();
-});*/
 
-
-<<<<<<< HEAD
-
-=======
-  const container = document.querySelectorAll('#projectContainer');
-  container.forEach(proj => {
-    proj.remove();
-  });
->>>>>>> working
+ const container = document.querySelectorAll('#projectContainer');
+ container.forEach(proj => {
+   proj.remove();
+ });
 }
 
 

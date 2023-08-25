@@ -11,7 +11,7 @@ body {
 #grid {
     width: 100%;
    display: grid;
-    grid-template-columns: 0.3fr 5fr;
+    grid-template-columns: 1fr 5fr;
     grid-template-rows: 1fr;
 
     justify-items: center;
@@ -22,10 +22,9 @@ body {
    
     display: flex;
     padding-top: 20px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 10px;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
   }
 
   .mainContainer {
@@ -84,7 +83,6 @@ body {
  #row {
     background-color: grey;
     color: white;
-    
  }
 
  td {
@@ -115,17 +113,4 @@ body {
 
 .label {
     padding: 10px;
-}
-
-table {
-   padding-left: 5px;
-}
-
-.showMenuContainer {
-   padding: 5px;
-}
-
-#project {
-   width: 80%;
-
 }
