@@ -1,7 +1,7 @@
 //import {  } from './factoryfunct';
 
 function storeToDo(toDoArray) {
-  
+
     //localStorage.removeItem('toDoArray')
     localStorage.setItem("toDoArray", JSON.stringify(toDoArray));
 
@@ -24,7 +24,7 @@ function storedProject() {
 
     //localStorage.removeItem("projectArray");
 
-    let storedProjects = JSON.parse(localStorage.getItem("projectArray")); 
+    let storedProjects = JSON.parse(localStorage.getItem("projectArray"));
     return storedProjects
 
 }

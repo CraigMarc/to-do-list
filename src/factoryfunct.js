@@ -9,29 +9,29 @@ import { storeToDo, storeProject, storedToDo, storedProject } from './storage';
 
 
 function getStoredArrays() {
-  
+
   let storedTodo1 = storedToDo()
   let storedProject1 = storedProject()
 
 
-if (storedTodo1 != null) {
-for (let i = 0; i < storedTodo1.length; i++) {
+  if (storedTodo1 != null) {
+    for (let i = 0; i < storedTodo1.length; i++) {
 
-  toDo.addToDo(storedTodo1[i])
-}
-}
+      toDo.addToDo(storedTodo1[i])
+    }
+  }
 
-//displayToDos(toDo.toDoArray)
-displayToDos(returnProjectArray('Inbox'))
+  //displayToDos(toDo.toDoArray)
+  displayToDos(returnProjectArray('Inbox'))
 
-if (storedProject1 != null) {
-for (let i = 1; i < storedProject1.length; i++) {
+  if (storedProject1 != null) {
+    for (let i = 1; i < storedProject1.length; i++) {
 
-  projectList.addProject(storedProject1[i])
-}
-  removeProjectTabs()
-  addProjectTabs(projectList.projectListArr)
-}
+      projectList.addProject(storedProject1[i])
+    }
+    removeProjectTabs()
+    addProjectTabs(projectList.projectListArr)
+  }
 }
 
 //to do factory funct
@@ -48,7 +48,7 @@ const toDo = (() => {
 
   //adds new todos to array
   const addToDo = (newToDo) => {
-  
+
     toDoArray.push(newToDo)
   };
 
@@ -82,9 +82,9 @@ function addToProject(projectName, description, dueDate, priority) {
     return toDo.toDoArray
   }
   toDo.addToDo(todoFactory(projectName, description, dueDate, priority))
-  
+
   storeToDo(toDo.toDoArray)
-  
+
   return toDo.toDoArray
 }
 
@@ -93,7 +93,7 @@ function returnProjectArray(projectName) {
 
   return toDo.toDoArray.filter(function (x) { return x.project == projectName })
 
-  //return projectArray.filter(function (x) { return x.project == projectName })
+
 
 }
 
@@ -102,7 +102,7 @@ function findProjects(projectFind) {
   let result = [];
 
   toDo.toDoArray.forEach((project, index) => project.project === projectFind ? result.push(index) : null)
-  //projectArray.forEach((project, index) => project.project === projectFind ? result.push(index) : null)
+
 
   return result
 }
@@ -135,7 +135,7 @@ function deleteProjectFromProjectArray(project) {
     toDo.toDoArray.splice(projectArr[0], 1)
     //may remove
     storeToDo(toDo.toDoArray)
-    
+
     recursion()
 
   }
@@ -146,13 +146,13 @@ function deleteProjectFromProjectArray(project) {
 
 function deleteProjectFromProjectListArray(project) {
 
-  
+
 
   let index = projectList.projectListArr.indexOf(project)
 
   projectList.projectListArr.splice(index, 1)
 
-storeProject(projectList.projectListArr)
+  storeProject(projectList.projectListArr)
 
   return projectList.projectListArr
 
@@ -218,7 +218,7 @@ function getWeek() {
 
     weekArray.push(toDo.toDoArray[result[i]])
   }
-  
+
   return weekArray
 }
 
@@ -250,7 +250,7 @@ function getDaysInMonth() {
 
     monthArray.push(toDo.toDoArray[result[i]])
   }
-  
+
   return monthArray
 
 

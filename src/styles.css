@@ -1,116 +1,114 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 
 body {
-    width: 100%;
-    font-family: 'Roboto', sans-serif;
+   width: 100%;
+   font-family: 'Roboto', sans-serif;
 }
 
 #grid {
-    width: 100%;
+   width: 100%;
    display: grid;
-    grid-template-columns: 1fr 5fr;
-    grid-template-rows: 1fr;
+   grid-template-columns: 1fr 5fr;
+   grid-template-rows: 1fr;
 
-    justify-items: center;
-    height: 100vh;
-     }
+   justify-items: center;
+   height: 100vh;
+}
 
-  #projectContainer {
-   
-    display: flex;
-    padding-top: 20px;
-    padding-left: 10px;
-    align-items: center;
-    gap: 10px;
-  }
+#projectContainer {
 
-  .mainContainer {
-    height: 100%;
-    width: 100%;
-    background-color: #edebe4;
-  }
+   display: flex;
+   padding-top: 20px;
+   padding-left: 10px;
+   align-items: center;
+   gap: 10px;
+}
 
- #projectDelete {
-    background-color: red;
-    color: white;
-    border-radius: 10px;
-    padding: 5px;
- }
+.mainContainer {
+   height: 100%;
+   width: 100%;
+   background-color: #edebe4;
+}
 
- #deleteButton {
-    background-color: red;
-    border-radius: 10px;
-    color: white;
-    padding: 5px;
- }
+#projectDelete {
+   background-color: red;
+   color: white;
+   border-radius: 10px;
+   padding: 5px;
+}
 
- #timetab {
-    padding: 20px;
+#deleteButton {
+   background-color: red;
+   border-radius: 10px;
+   color: white;
+   padding: 5px;
+}
 
- }
+#timetab {
+   padding: 20px;
 
- #menuContainer {
-    background-color: gray;
-    height: 100%;
-    text-align: center;
-    color: white;
- }
+}
 
- .th1 {
-    width: 50vw;
- }
+#menuContainer {
+   background-color: gray;
+   height: 100%;
+   text-align: center;
+   color: white;
+}
 
- .th2 {
-    width: 15vw;
- }
+.th1 {
+   width: 50vw;
+}
 
- #title {
-    text-align: center;
-    font-size: 30px;
- }
+.th2 {
+   width: 15vw;
+}
 
- tr {
+#title {
+   text-align: center;
+   font-size: 30px;
+}
+
+tr {
    font-size: 18px;
- }
+}
 
- .th3 {
-    width: 10vw;
- }
+.th3 {
+   width: 10vw;
+}
 
- #row {
-    background-color: grey;
-    color: white;
- }
+#row {
+   background-color: grey;
+   color: white;
+}
 
- td {
-    padding: 10px;
- }
-  
- #cell4 {
-    background-color: #edebe4;
- }
+td {
+   padding: 10px;
+}
 
- .submitButton {
-    padding: 5px;
-    background-color: white;
-    border-radius: 10px;
- }
+#cell4 {
+   background-color: #edebe4;
+}
 
- .submit {
-    padding: 5px;
- }
+.submitButton {
+   padding: 5px;
+   background-color: white;
+   border-radius: 10px;
+}
 
- #description {
-    width: 60vw
- }
+.submit {
+   padding: 5px;
+}
+
+#description {
+   width: 60vw
+}
 
 .submitproject {
-    padding: 5px;
+   padding: 5px;
 }
 
 .label {
-    padding: 10px;
+   padding: 10px;
 }
