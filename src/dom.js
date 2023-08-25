@@ -97,18 +97,7 @@ function displayToDos(todoArray) {
   }
 }
 
-// delete table function when deleting to do **** may just use clear table now
-/*
-function deleteTable(todoArray) {
 
-
-
-  for (let i = 1; i < todoArray.length + 2; i++) {
-    document.getElementById("todoTable").deleteRow(1);
-
-
-  }
-}*/
 
 
 // clear table when adding new item
@@ -157,11 +146,12 @@ function form() {
       clearTable(returnProjectArray(newProject.currentProjectArray[0]))
     }
     todoArray = returnProjectArray(newProject.currentProjectArray[0])
-   console.log(data)
+   
     addToProject(projectForm, descriptionForm, dateForm, priorityForm)
    
     displayToDos(returnProjectArray(newProject.currentProjectArray[0]))
    
+    document.getElementById("form").reset();
   
 
   });
@@ -186,7 +176,7 @@ function projectForm() {
     if (projectList == -1){
     projectNameArray(projectForm)
     }
-
+    document.getElementById("projform").reset();
 
   });
 }
