@@ -82,7 +82,7 @@ function addToProject(projectName, description, dueDate, priority) {
     return toDo.toDoArray
   }
   toDo.addToDo(todoFactory(projectName, description, dueDate, priority))
-  console.log(toDo.toDoArray)
+  
   storeToDo(toDo.toDoArray)
   
   return toDo.toDoArray
@@ -133,7 +133,8 @@ function deleteProjectFromProjectArray(project) {
     }
 
     toDo.toDoArray.splice(projectArr[0], 1)
-
+    //may remove
+    storeToDo(toDo.toDoArray)
     
     recursion()
 

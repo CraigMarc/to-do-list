@@ -257,7 +257,11 @@ let projectListArray = deleteProjectFromProjectListArray(e.target.className)
 
 removeProjectTabs()
 addProjectTabs(projectListArray)
-
+//may delete ********
+newProject.changeProject('Inbox')
+console.log(newProject.currentProjectArray[0])
+console.log(returnProjectArray(newProject.currentProjectArray[0]))
+displayToDos(returnProjectArray(newProject.currentProjectArray[0]))
 }
 
 
