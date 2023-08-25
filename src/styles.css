@@ -8,7 +8,7 @@ body {
 #grid {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 0.8fr 5fr;
   grid-template-rows: 1fr;
 
   justify-items: center;
@@ -18,15 +18,17 @@ body {
 #projectContainer {
   display: flex;
   padding-top: 20px;
-  padding-left: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
 }
 
 .mainContainer {
   height: 100%;
   width: 100%;
   background-color: #edebe4;
+  padding-left: 5px;
 }
 
 #projectDelete {
@@ -44,7 +46,9 @@ body {
 }
 
 #timetab {
-  padding: 20px;
+  padding: 5px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 #menuContainer {
@@ -108,4 +112,10 @@ td {
 
 .label {
   padding: 10px;
+}
+
+#project {
+
+  width: 85%;
+
 }
