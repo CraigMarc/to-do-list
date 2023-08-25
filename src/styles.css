@@ -69,6 +69,11 @@ body {
 
  #title {
     text-align: center;
+    font-size: 30px;
+ }
+
+ tr {
+   font-size: 18px;
  }
 
  .th3 {
