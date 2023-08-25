@@ -276,9 +276,10 @@ function removeProjectTabs() {
     proj.remove();
   });
 
-  const container = document.getElementById('projectContainer');
-  container.remove();
-
+  const container = document.querySelectorAll('#projectContainer');
+  container.forEach(proj => {
+    proj.remove();
+  });
 }
 
 
