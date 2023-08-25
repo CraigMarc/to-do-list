@@ -1,92 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To do list</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>To do list</title>
-</head>
+  <body>
+    <div id="grid">
+      <div id="menuContainer">
+        <div id="timetab" class="week">Due This Week</div>
+        <div id="timetab" class="month">Due This Month</div>
 
-<body>
-  <div id="grid">
+        <form action="" id="projform">
+          <div class="input">
+            <label class="label" for="project">Project:</label>
+            <input name="project" type="text" id="project" required />
 
-    <div id="menuContainer">
-      <div id="timetab" class="week">Due This Week</div>
-      <div id="timetab" class="month">Due This Month</div>
-
-      <form action="" id="projform">
-
-        <div class="input">
-          <label class="label" for="project">Project:</label>
-          <input name="project" type="text" id="project" required>
-
-          <div class="submitproject">
-            <button class="submitButton" type="submit">Add Project</button>
-
+            <div class="submitproject">
+              <button class="submitButton" type="submit">Add Project</button>
+            </div>
           </div>
+        </form>
 
+        <div id="projectContainer">
+          <div id="projecttab" value="0">Inbox</div>
         </div>
-      </form>
-
-      <div id='projectContainer'>
-        <div id="projecttab" value="0">Inbox</div>
-      </div>
-    </div>
-
-
-    <div class="mainContainer">
-      <div id="todoContainer">
-        <h2 id="title">Inbox</h2>
-        <table id="todoTable">
-          <tr>
-            <th class="th1">Description</th>
-            <th class="th2">Date</th>
-            <th class="th3">Priority</th>
-
-
-          </tr>
-        </table>
       </div>
 
-
-      <form action="" id="form">
-        <fieldset>
-          <div class="input">
-            <label for="description">Description:</label>
-            <input name="description" type="text" id="description" required>
-          </div>
-          <div class="input">
-            <label for="date">Date:</label>
-            <input name="date" type="date" id="date" required>
-          </div>
-
-
-          <div class="input">
-            <label for="priority">Priority:</label>
-            <select name="priority" id="priority">
-              <option value="low">Low</option>
-              <option value="medium">Medium</option>
-              <option value="high">High</option>
-
-            </select>
-          </div>
-
-        </fieldset>
-
-
-        <div class="submit">
-          <button class="submitButton" type="submit">Add To Do</button>
-
+      <div class="mainContainer">
+        <div id="todoContainer">
+          <h2 id="title">Inbox</h2>
+          <table id="todoTable">
+            <tr>
+              <th class="th1">Description</th>
+              <th class="th2">Date</th>
+              <th class="th3">Priority</th>
+            </tr>
+          </table>
         </div>
-      </form>
 
-      <button class="submitButton" type="button" id="showMenu">Add To Do</button>
+        <form action="" id="form">
+          <fieldset>
+            <div class="input">
+              <label for="description">Description:</label>
+              <input name="description" type="text" id="description" required />
+            </div>
+            <div class="input">
+              <label for="date">Date:</label>
+              <input name="date" type="date" id="date" required />
+            </div>
 
+            <div class="input">
+              <label for="priority">Priority:</label>
+              <select name="priority" id="priority">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+              </select>
+            </div>
+          </fieldset>
 
+          <div class="submit">
+            <button class="submitButton" type="submit">Add To Do</button>
+          </div>
+        </form>
+
+        <button class="submitButton" type="button" id="showMenu">
+          Add To Do
+        </button>
+      </div>
     </div>
-
-  </div>
-  <script src="main.js"></script>
-</body>
-
+    <script src="main.js"></script>
+  </body>
 </html>

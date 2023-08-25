@@ -1,19 +1,23 @@
+import "./styles.css";
+import {
+  form,
+  projectForm,
+  historyTabListener,
+  projectTabListener,
+  displayForm,
+  hideForm,
+} from "./dom";
+import { getStoredArrays } from "./factoryfunct";
 
-import './styles.css';
-import {form, projectForm, historyTabListener, projectTabListener, displayForm, hideForm} from './dom';
-import {getStoredArrays} from './factoryfunct';
+form();
+getStoredArrays();
 
+displayForm();
 
+hideForm();
 
-form()
-getStoredArrays()
+projectForm();
 
-displayForm()
+historyTabListener();
 
-hideForm()
-
-projectForm()
-
-historyTabListener()
-
-projectTabListener()
+projectTabListener();

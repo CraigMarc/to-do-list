@@ -1,40 +1,25 @@
 //import {  } from './factoryfunct';
 
 function storeToDo(toDoArray) {
-
-    //localStorage.removeItem('toDoArray')
-    localStorage.setItem("toDoArray", JSON.stringify(toDoArray));
-
-
+  //localStorage.removeItem('toDoArray')
+  localStorage.setItem("toDoArray", JSON.stringify(toDoArray));
 }
 
 function storeProject(projectArray) {
-    //localStorage.removeItem('projectArray')
-    localStorage.setItem("projectArray", JSON.stringify(projectArray));
-
+  //localStorage.removeItem('projectArray')
+  localStorage.setItem("projectArray", JSON.stringify(projectArray));
 }
 
 function storedToDo() {
-
-    let storedToDos = JSON.parse(localStorage.getItem("toDoArray"));
-    return storedToDos
+  let storedToDos = JSON.parse(localStorage.getItem("toDoArray"));
+  return storedToDos;
 }
 
 function storedProject() {
+  //localStorage.removeItem("projectArray");
 
-    //localStorage.removeItem("projectArray");
-
-    let storedProjects = JSON.parse(localStorage.getItem("projectArray"));
-    return storedProjects
-
+  let storedProjects = JSON.parse(localStorage.getItem("projectArray"));
+  return storedProjects;
 }
 
-
-
-
-export {
-    storeToDo,
-    storeProject,
-    storedToDo,
-    storedProject
-};
+export { storeToDo, storeProject, storedToDo, storedProject };

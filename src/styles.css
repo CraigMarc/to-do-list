@@ -1,114 +1,111 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 body {
-   width: 100%;
-   font-family: 'Roboto', sans-serif;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
 }
 
 #grid {
-   width: 100%;
-   display: grid;
-   grid-template-columns: 1fr 5fr;
-   grid-template-rows: 1fr;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr;
 
-   justify-items: center;
-   height: 100vh;
+  justify-items: center;
+  height: 100vh;
 }
 
 #projectContainer {
-
-   display: flex;
-   padding-top: 20px;
-   padding-left: 10px;
-   align-items: center;
-   gap: 10px;
+  display: flex;
+  padding-top: 20px;
+  padding-left: 10px;
+  align-items: center;
+  gap: 10px;
 }
 
 .mainContainer {
-   height: 100%;
-   width: 100%;
-   background-color: #edebe4;
+  height: 100%;
+  width: 100%;
+  background-color: #edebe4;
 }
 
 #projectDelete {
-   background-color: red;
-   color: white;
-   border-radius: 10px;
-   padding: 5px;
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  padding: 5px;
 }
 
 #deleteButton {
-   background-color: red;
-   border-radius: 10px;
-   color: white;
-   padding: 5px;
+  background-color: red;
+  border-radius: 10px;
+  color: white;
+  padding: 5px;
 }
 
 #timetab {
-   padding: 20px;
-
+  padding: 20px;
 }
 
 #menuContainer {
-   background-color: gray;
-   height: 100%;
-   text-align: center;
-   color: white;
+  background-color: gray;
+  height: 100%;
+  text-align: center;
+  color: white;
 }
 
 .th1 {
-   width: 50vw;
+  width: 50vw;
 }
 
 .th2 {
-   width: 15vw;
+  width: 15vw;
 }
 
 #title {
-   text-align: center;
-   font-size: 30px;
+  text-align: center;
+  font-size: 30px;
 }
 
 tr {
-   font-size: 18px;
+  font-size: 18px;
 }
 
 .th3 {
-   width: 10vw;
+  width: 10vw;
 }
 
 #row {
-   background-color: grey;
-   color: white;
+  background-color: grey;
+  color: white;
 }
 
 td {
-   padding: 10px;
+  padding: 10px;
 }
 
 #cell4 {
-   background-color: #edebe4;
+  background-color: #edebe4;
 }
 
 .submitButton {
-   padding: 5px;
-   background-color: white;
-   border-radius: 10px;
+  padding: 5px;
+  background-color: white;
+  border-radius: 10px;
 }
 
 .submit {
-   padding: 5px;
+  padding: 5px;
 }
 
 #description {
-   width: 60vw
+  width: 60vw;
 }
 
 .submitproject {
-   padding: 5px;
+  padding: 5px;
 }
 
 .label {
-   padding: 10px;
+  padding: 10px;
 }
