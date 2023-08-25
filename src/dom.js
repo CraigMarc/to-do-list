@@ -150,6 +150,7 @@ function form() {
    let dateForm = data.date
    let priorityForm = data.priority
    let projectForm = projectNow()
+   document.getElementById("form").reset();
 
    let todoArray = returnProjectArray(newProject.currentProjectArray[0])
   
@@ -185,6 +186,7 @@ function projectForm() {
 
    if (projectList == -1){
    projectNameArray(projectForm)
+   document.getElementById("projform").reset();
    }
 
 
